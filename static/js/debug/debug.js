@@ -16,6 +16,44 @@ dr.directive("inputFocus",function(){
 })
 
 
+
+var app = angular.module("ItMadelApp",['ngMaterial','directive','index','ui.router']);
+app.config(["$stateProvider", function($stateProvider){
+    "ngInject";
+    //$stateProvider.when("");
+
+}])
+
+var dr = angular.module("directive",[]);
+dr.directive("inputFocus",function(){
+    return function(scope,element,attrs){
+        element.children().eq(0).on('click',function(){
+            scope.toInput = true;
+            document.getElementById('search-input').focus();
+        })
+    }
+})
+
+
+
+var app = angular.module("ItMadelApp",['ngMaterial','directive','index','ui.router']);
+app.config(["$stateProvider", function($stateProvider){
+    "ngInject";
+    //$stateProvider.when("");
+
+}])
+
+var dr = angular.module("directive",[]);
+dr.directive("inputFocus",function(){
+    return function(scope,element,attrs){
+        element.children().eq(0).on('click',function(){
+            scope.toInput = true;
+            document.getElementById('search-input').focus();
+        })
+    }
+})
+
+
 var index = angular.module("index",[]);
 index.controller("indexCtrl",["$scope", function($scope){
     "ngInject";
@@ -519,6 +557,18 @@ app.config(["$routeProvider", function($routeProvider){
 
 }])
 
+
+var sv = angular.module("index_sv",[]);
+
+sv.service("items",function(){
+
+})
+
+var sv = angular.module("index_sv",[]);
+
+sv.service("items",function(){
+
+})
 
 var sv = angular.module("index_sv",[]);
 

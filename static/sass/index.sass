@@ -27,7 +27,9 @@
     position: absolute
 
 $baseBlue: #5A8AFF
-$fontColor: #A2A2A2
+$fontColor: #777
+$fontBlack: #7D7D7E
+$fc2: #DADBDD
 $footerFontColor: #777979
 $lineColor: #ECECEC
 $baseBlack: #232323
@@ -35,6 +37,8 @@ $shadeLeft: #28B4F1
 $shadeRight: #18CCC0
 $mainBg: #EEF2FE
 $lineGray: #E1E1E1
+$backIconSize: 30px 
+$shadowBule: rgba(90,138,255,0.2)
 
 // 共用类
 html
@@ -132,8 +136,11 @@ header
             line-height: 70px
             padding: 0 10px
             @include box-sizing
+            
+            P
+                cursor: pointer
 
-            &.active
+            &.active p
                 border-bottom: solid 2px $baseBlack
 
             &:focus
@@ -211,12 +218,48 @@ header
             left: 0
             width: 100%
 main
-    .part-one
-        box-shadow: 0 1px 1px rgba(0,0,0,0.3)
+    overflow-x: hidden
 
-    .intorduction
-        .slider
-            padding: 0 20px
+    .part-one
+        box-shadow: 0 1px 2px $shadowBule
+        position: relative
+        z-index: 2
+
+    .slider
+        padding: 0 20px
+        color: $fontColor
+
+        .pics
+            padding: $backIconSize
+            height: 174px;
+            position: relative
+
+            .dscp
+                position: relative
+
+                p
+                    width: 162px
+                    font-size: 1.8rem
+                    line-height: 3rem
+                    height: 6rem
+
+        .toleft-icon
+            background: transparent
+            color: $fontColor
+            position: absolute
+            outline: none
+            cursor: default
+            top: 0
+            bottom: 0
+            left: 0
+
+        .material-icons
+            cursor: pointer
+            font-size: $backIconSize
+
+        .icon>img
+            float: right
+
     .declaration
         background: $baseBlue
         color: #fff
@@ -249,13 +292,17 @@ main
         background: $mainBg
 
     .shopping
-        margin: 45px auto  0
+        margin: 0 auto
+        padding: 45px 0 0
             
         .ctrl
+            color: $fontColor
+
             h2
                 float: left
                 line-height: 40px
                 margin-right: 30px
+
             .dl
                 float: left
                 position: relative
@@ -266,6 +313,7 @@ main
                 &>button
                     padding: 0 45px
                     background: transparent
+                    color: $fontColor
                     &:focus
                         background: transparent
 
@@ -286,12 +334,14 @@ main
                 position: relative
                 padding: 15px
             a
+                background: white
                 display: block
                 width: 100%
                 height: 250px
-                border: solid 1px #000
+                box-shadow: 0 0 10px $shadowBule
                 position: relative
                 overflow: hidden
+                @include box-sizing()
 
             .new
                 &::before
@@ -364,6 +414,7 @@ main
             div
                 line-height: $want-height
                 float: right
+                cursor: pointer
         .medals
             li
                 text-align: center
@@ -397,7 +448,7 @@ main
 
 
     .part-three
-        height: 100px
+        height: 200px
         background: -prefix-linear-gradient(left, $shadeLeft, $shadeRight)
         background: linear-gradient(to right, $shadeLeft, $shadeRight)
 
@@ -406,14 +457,16 @@ main
                 width: 33.33%
                 color: #fff
                 margin: 0 auto
-                line-height: 100px
+                line-height: 200px
             p
                 float: left
+                font-size: 2.4rem
+
             input 
                 border: solid 2px #fff
-                border-radius: 10px
-                padding: 0 10px
-                margin: 0 10px
+                border-radius: 20px
+                padding: 7px 25px
+                margin: 0 0 0 40px
                 background: transparent
 
 footer
@@ -427,6 +480,11 @@ footer
 
         dt
             margin-bottom: 30px
+            color: $fontBlack
+
+        dd, a
+            color: $fc2!important
+            line-height: 30px
 
         .contact-us,
         .sitemap
@@ -444,6 +502,12 @@ footer
         @include box-sizing($which:content-box)
         line-height: 20px
         text-align: center
+
+        .copy
+            float: left
+
+        .shareto
+            float: right
 
 
 
