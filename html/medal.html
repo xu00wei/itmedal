@@ -1,0 +1,54 @@
+<main ng-controller="medalCtrl">
+    <div class="part-one">
+        <div layout="row" class="intorduction content-box">
+            <div class="slider" flex="60">
+                <ul class="pics clearfix" >
+                    <button class="toleft-icon">
+                        <i class="material-icons">keyboard_backspace</i>
+                    </button>
+                    <li id="img-1">
+                        <div layout="row">
+                            <div class="dscp" flex>
+                                <p class="center-all">贴上它, 去攻克它, 就不仅仅是一枚贴纸</p>
+                            </div>
+                            <div class="icon" flex><img src="../static/images/imac.png" alt=""></div>
+                        </div>
+                    </li>
+                    <button class="toright-icon"></button>
+                </ul>
+                <ul class="now-pic">
+                    <li><a class="active" href="#img-1"></a></li>
+                    <li><a href="#img-2"></a></li>
+                    <li><a href="#img-3"></a></li>
+                </ul>
+            </div>
+
+            <div class="declaration" flex="40">
+                <div>
+                    <p>为尽棉薄之力,每一样商品的购买,我们将捐献商品价格的10%给开源组织</p>
+                </div>
+                <div layout="row">
+                    <div flex="45" class="week-donation">
+                        <p>本月捐款</p>
+                        <p>287.5</p>
+                    </div>
+                    <div flex="55" class="total-donation">
+                        <p>总捐款</p>
+                        <p>222222.22</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="part-two" ng-include="curHtmlTemp"></div>
+
+    <div class="part-three">
+        <div class="focusme content-box">
+            <div>
+                <p>订阅</p>
+                <input type="" />
+            </div>
+        </div>
+    </div>
+</main>

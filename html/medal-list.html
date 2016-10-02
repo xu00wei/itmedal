@@ -1,0 +1,68 @@
+<div ng-controller="medalListCtrl">
+    <div  class="shopping clearfix content-box">
+        <div class="ctrl clearfix">
+            <h2>勋章</h2>
+            <md-menu-bar class="clearfix">
+                <md-menu class="dl">
+                    <button ng-click="$mdOpenMenu()">分类</button>
+                    <md-menu-content class="dds">
+                        <md-menu-item >
+                            <md-button class="md-primary">linux</md-button>
+                        </md-menu-item>
+                        <md-menu-item ng-focus="" ng-style="fcStyle">
+                            <md-button class="md-warn">soft</md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>emoji</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <md-menu class="dl">
+                    <button ng-click="$mdOpenMenu()">分类</button>
+                    <md-menu-content class="dds">
+                        <md-menu-item>
+                            <md-button>linux</md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>soft</md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>emoji</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </md-menu-bar>
+        </div>
+        <div layout="row" layout-wrap class="goods">
+            <div flex="25" ng-repeat="medal in medalList">
+                <a class="new" ng-click="medalCtrl.setHtmlTemp(1)">
+                    <div class="img center-all">
+                        <img ng-src="{{medal.cover}}" alt="">
+                        <p class="price">{{medal.price}}</p>
+                        <p class="desc">{{medal.describe}}</p>
+                    </div>
+                </a>
+                <i class="cart"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="want-medals content-box">
+        <div>
+            <h2>GoodIdea</h2>
+            <div>更多</div>
+        </div>
+        <ul class="medals" layout="row">
+            <li flex="25">
+                <div>
+                    <p class="md-name">angularJs</p>
+                    <img src="../static/images/angular.png" alt="">
+                    <p class="md-wantnum"><span></span></p>
+                    <p class="is-mywant">200人想要</p>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
