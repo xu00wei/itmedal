@@ -1,4 +1,5 @@
 var medal_sv = angular.module("medal_sv",[]);
+
 medal_sv.service("Medal",function($location){
     var path;
     var TEMPS = ['./html/medal-list.html','./html/medal-item.html'];
@@ -13,3 +14,4 @@ medal_sv.service("Medal",function($location){
         }
     }
 })
+

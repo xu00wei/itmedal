@@ -1,4 +1,4 @@
-var app = angular.module("ItMadelApp",['ngMaterial','directive','index_ctrl','ui.router']);
+var app = angular.module("ItMadelApp",['ngMaterial','directive','index_ctrl','ui.router','tools']);
 app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,$urlRouterProvider){
     "ngInject";
     //$stateProvider.when("");
@@ -36,3 +36,26 @@ dr.directive("inputFocus",function(){
     }
 })
 
+dr.directive("lockScroll", ["$window", function($window){
+    return {
+        restrict: 'AE',
+        link: function(scope,element,attrs){
+            scope.$watch(attrs["lockScroll"],function(newVal,oldVal){
+                if(newVal==false){
+                    element.css({
+                        "max-height": "auto",
+                        "overflow": "auto"
+                    })
+                }else{
+                    var vh = $window.innerHeight;
+                    element.css({
+                        "max-height": vh,
+                        "overflow": "hidden"
+                    })
+                }
+
+            }, true);
+        }
+
+    }
+}])

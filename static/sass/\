@@ -1,0 +1,426 @@
+@import "common"
+// 语言栏目
+//----------------------
+.lang
+    height: 50px
+
+    .signin-container
+        height: 100%
+        line-height: 50px
+        float: right
+        &:first-child
+            float: right
+        &:last-child
+            float: right
+        &.active
+            background: $baseBlue
+
+        a
+            padding: 0 10px
+
+
+
+#index-header
+    height: 70px
+    border-bottom: $lineColor
+    padding-bottom: 2px
+    box-shadow: 0 1px 0 rgba(0,0,0,0.3)
+
+    .logo
+        float: left
+        margin-top: 12px
+
+    ul
+        float: left
+        margin: 0 0 0 40px
+        color: $fontColor
+        li
+            float: left
+            height: 100%
+            line-height: 70px
+            padding: 0 10px
+            @include box-sizing
+            
+            P
+                cursor: pointer
+
+            &.active p
+                border-bottom: solid 2px $baseBlack
+
+            &:focus
+                outline: none
+
+    // 搜索栏 
+    //---------
+    .search
+        position: relative
+        float: right
+        margin-top: 22px
+
+        button
+            width: 48px
+            height: 48px
+            bottom: -13px
+            outline: 0
+
+        .search-btn
+            position: absolute
+            left: -48px
+
+        .search-close-btn
+            display: none
+            position: absolute
+            right: -15px
+            opacity: 0
+
+
+        #search-input
+            width: 0
+            outline: none
+            background: transparent
+            border-bottom: 1px solid rgba(0,0,0,0.54)
+            padding: 5px 0
+            transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+
+        &.show
+            #search-input
+                width: 300px
+            .search-close-btn
+                opacity: 1
+                display: block
+
+
+        label
+            display: block
+            font-weight: 300
+            color: rgba(0,0,0,0.54)
+            pointer-events: none
+            position: absolute
+            overflow: hidden
+            left: 0
+            right: 0
+            top: 7px
+            bottom: 0
+
+
+            &::after
+                content: ' '
+                height: 2px
+                width: 10px
+                left: 45%
+                bottom: 0
+                background-color: #000
+                position: absolute
+                visibility: hidden
+                transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+
+            &.writing
+                visibility: hidden
+
+        &.line label::after
+            visibility: visible
+            left: 0
+            width: 100%
+main
+    overflow-x: hidden
+
+    .part-one
+        box-shadow: 0 1px 2px $shadowBule
+        position: relative
+        z-index: 2
+
+    .slider
+        padding: 0 20px
+        color: $fontColor
+
+        .pics
+            padding: $backIconSize
+            height: 174px;
+            position: relative
+
+            .dscp
+                position: relative
+
+                p
+                    width: 162px
+                    font-size: 1.8rem
+                    line-height: 3rem
+                    height: 6rem
+
+        .toleft-icon
+            background: transparent
+            color: $fontColor
+            position: absolute
+            outline: none
+            cursor: default
+            top: 0
+            bottom: 0
+            left: 0
+
+        .material-icons
+            cursor: pointer
+            font-size: $backIconSize
+
+        .icon>img
+            float: right
+
+    .declaration
+        background: $baseBlue
+        color: #fff
+        padding: 30px 20px
+        
+        p
+            margin: 10px 0
+        >div:first-child
+            margin: 0 0 20px
+            p
+                line-height: 26px
+
+        .week-donation,.total-donation
+            p:last-child
+                font-size: 2.5rem
+
+        .week-donation
+            border: solid 1px #fff
+            border-left: none
+
+        .total-donation
+            padding-left: 20px
+            border: solid 1px #fff
+            border-left: none
+            border-right: none
+
+    // medal list 
+    //------------
+    .part-two
+        background: $mainBg
+
+    .shopping
+        margin: 0 auto
+        padding: 45px 0 0
+            
+        .ctrl
+            color: $fontColor
+
+            h2
+                float: left
+                line-height: 40px
+                margin-right: 30px
+
+            .dl
+                float: left
+                position: relative
+
+                &:focus
+                    background: transparent
+
+                &>button
+                    padding: 0 45px
+                    background: transparent
+                    color: $fontColor
+                    &:focus
+                        background: transparent
+
+                &::after
+                    content: "\200B"
+                    @include top-triangle($height:4px,$width:6px)
+                    position: absolute
+                    top: 18px
+                    right: 20px
+
+            .dds
+                max-width: 120px
+                .md-button:focus
+                    background-color: red!important
+        .goods
+            margin: 0 -15px -15px
+            &>div
+                position: relative
+                padding: 15px
+            a
+                background: white
+                display: block
+                width: 100%
+                height: 250px
+                position: relative
+                overflow: hidden
+                @include box-sizing()
+
+                &:hover
+                    box-shadow: 0 0 10px $shadowBule
+
+            a + i.cart-icon
+                display: none
+
+            a:hover + i.cart-icon
+                display: block
+                
+            .new
+                &::before
+                    @include new-block($width:50%,$height:50%)
+                    @include transform($str:rotate(45deg))
+                    left: -25%
+                    top: -25%
+                    background: #fdda31
+
+                &::after
+                    @include new-block($width:25%,$height:25%)
+                    content: "NEW"
+                    color: #000
+                    @include transform($str:rotate(-45deg))
+                    left: 7%
+                    top: 2%
+
+
+            .img
+                height: 50%
+                color: #000
+                text-align: center
+
+                img
+                    display: block
+                    margin: auto
+
+                .price
+                    display: inline-block
+                    position: relative
+                    top: -35px
+                    left: 70px
+
+                    &::before,
+                    &::after
+                        @include new-block($width:25px,$height:25px)
+                        left: -28px
+                        top: -5px
+                        border-radius: 50%
+                    &::before
+                        background: #1acab0
+                    &::after
+                        line-height: 25px
+                        color: #fff
+                        content: "$"
+    $want-height: 40px
+    .want-medals
+        padding: 60px 0
+        & > div
+            height: $want-height
+
+            h2
+                line-height: $want-height
+                float: left
+            div
+                line-height: $want-height
+                float: right
+                cursor: pointer
+        .medals
+            li
+                text-align: center
+            div
+                display: inline-block
+            .md-wantnum
+                width: 100%
+                height: 10px
+                border-radius: 5px
+                background: #F3F3F3
+                
+                span
+                    width: 60%
+                    height: 10px
+                    display: block
+                    border-radius: 5px
+                    background: -prefix-linear-gradient(left, $shadeLeft, $shadeRight)
+                    background: linear-gradient(to right, $shadeLeft, $shadeRight)
+
+            .is-mywant::after
+                content: " "
+                width: 30px
+                height: 30px
+                border-radius: 50%
+                display: inline-block
+                position: relative
+                bottom: -6px
+                left: 3px
+                background: url(../images/iwant.png)
+                background-size: auto 30px
+
+
+    .part-three
+        height: 200px
+        background: -prefix-linear-gradient(left, $shadeLeft, $shadeRight)
+        background: linear-gradient(to right, $shadeLeft, $shadeRight)
+
+        .focusme
+            &>div
+                width: 33.33%
+                color: #fff
+                margin: 0 auto
+                line-height: 200px
+            p
+                float: left
+                font-size: 2.4rem
+
+            input 
+                border: solid 2px #fff
+                border-radius: 20px
+                padding: 7px 25px
+                margin: 0 0 0 40px
+                background: transparent
+
+#index-footer
+    height: 250px
+    background: #343539
+
+    &>div
+        height: 100%
+        color: #fff
+        padding: 10px 0
+
+        dt
+            margin-bottom: 30px
+            color: $fontBlack
+
+        dd, a
+            color: $fc2!important
+            line-height: 30px
+
+        .contact-us,
+        .sitemap
+            display: table
+            margin: auto
+        .qr-code
+            display: inline-block
+            float: right
+            text-align: center
+        
+    .copyright
+        border-top: 1px solid #fff
+        padding: 20px 0
+        height: 20px
+        @include box-sizing($which:content-box)
+        line-height: 20px
+        text-align: center
+
+        .copy
+            float: left
+
+        .shareto
+            float: right
+
+div[login-form]
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    background: rgba(255,255,255,0.9)
+    z-index: 1000
+
+    .login
+        width: 50%
+        height: 40%
+        margin: auto
+
+
+@media (min-width: 960px)
+    md-menu-content[width="5"]
+        min-width: 120px

@@ -1,11 +1,11 @@
 <div class="lang content-box">
     <div class="signin-container clearfix">
-        <a href="javascript:;">登入</a>
-        <a href="javascript:;">注册</a>
+        <a href="javascript:;" ng-click="toSignIn()">登入</a>
+        <a href="javascript:;" ng-click="toLogin()">注册</a>
     </div>
 </div>
 
-<header>
+<header id="index-header">
 
     <nav class="clearfix content-box">
         <div class="logo"><img src="../static/images/logo.png" alt="ITMedal-logo" /></div>
@@ -30,7 +30,7 @@
     </nav>
 </header>
 <div ng-include="curPage"></div>
-<footer layout="column">
+<footer id="index-footer" layout="column">
     <div class="content-box" layout="row" layout-wrap flex="auto">
         <div flex="25">
             <dl class="about-us">
@@ -76,3 +76,5 @@
     </div>
     </div>
 </footer>
+<div login-form ng-if="showLoginPage"></div>
+<div sign-in-form ng-if="showSignInPage"></div>

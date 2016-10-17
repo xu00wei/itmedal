@@ -1,0 +1,128 @@
+// 全局变量
+//--------------------
+@mixin box-sizing($which:border-box)
+    box-sizing: $which
+    -moz-box-sizing: $which
+    -webkit-box-sizing: $which
+
+@mixin transform($str)
+    transform: $str
+    -ms-transform: $str  /* IE 9 */
+    -moz-transform: $str /* Firefox */
+    -webkit-transform: $str /* Safari and Chrome */
+    -o-transform: $str /* Opera */
+
+@mixin top-triangle($width:10px,$height:10px,$color:#000)
+    width: 0
+    height: 0
+    border-top: $height solid $color
+    border-left: $width / 2 solid transparent
+    border-right: $width / 2 solid transparent
+
+@mixin new-block($width,$height)
+    content: " "
+    display: block
+    height: $height
+    width: $width
+    position: absolute
+
+$baseBlue: #5A8AFF
+$shadowBule: rgba(90,138,255,0.2)
+
+$fontColor: #777
+$footerFontColor: #777979
+$fontBlack: #7D7D7E
+$baseBlack: #232323
+
+$fc2: #DADBDD
+$lineColor: #ECECEC
+$mainBg: #EEF2FE
+$lineGray: #E1E1E1
+
+$shadeLeft: #28B4F1
+$shadeRight: #18CCC0
+$baseGreen_9: rgba(238,242,254,.9)
+$buttonGreen: #18CBAE
+
+$backIconSize: 30px 
+
+// 共用类
+html
+    background: #fff
+    font-size: 62.5% // 10 ÷ 16 × 100% = 62.5%
+
+body
+    font-size: 1.6rem
+
+li
+    list-style: none
+
+input:focus
+    outline: none
+a:not(.md-button)
+    color: black
+    text-decoration: none
+
+li,ul,body,p,span,a,h1,h2,h3,h4,img,button,
+nav,dl,dt,dd,ul,li,header,footer,input
+    margin: 0
+    padding: 0
+    border: 0
+    vertical-align: baseline
+
+h1,h2,h3
+    font-weight: 400
+    font-size: 1.8rem
+body
+    min-width: 980px
+    background: #fff
+button
+    border: none
+    background: #fff
+.md-button
+    margin: 0
+.clearfix
+    *zoom: 1
+    &::after
+        content: "\200B"
+        display: block
+        height: 0
+        clear: both
+
+.content-box
+    min-width: 960px
+    max-width: 1024px
+    width: 100%
+    margin: auto
+    @include box-sizing
+
+.ib-middle:after
+    content: ""
+    display: inline-block
+    width: 0
+    height: 100%
+    vertical-align: middle
+
+.center-all
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    margin: auto
+
+.cart-icon
+    padding: 10.5px 10px
+    width: 30px
+    border-radius: 50%
+    background: #20f280
+    position: absolute
+    left: 0
+    right: 0
+    bottom: -10px
+    margin: auto
+
+    &::after
+        @include new-block($width:30px,$height:29px)
+        position: static
+        background-image: url('../images/cart.png')

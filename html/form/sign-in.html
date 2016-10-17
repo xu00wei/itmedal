@@ -1,0 +1,34 @@
+<article class="sign-in center-all">
+    <header>
+        <h2>登入</h2>
+        <i class="close" ng-click="closeForm()">close</i>
+    </header>
+    <main>
+        <form name="loginForm">
+            <md-input-container class="md-block">
+                <label>邮箱</label>
+                <input required type="email" name="email" ng-model="user.email"
+                       ng-pattern="/^.+@.+\..+$/" />
+
+                <div ng-messages="loginForm.email.$error">
+                    <div ng-message="required">邮箱不能为空</div>
+                    <div ng-message="pattern">邮箱格式有误</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>密码</label>
+                <input required type="password" name="password" ng-model="user.password"
+                maxlength="15"/>
+
+                <div ng-messages="loginForm.password.$error" md-no-asterisk role="alert">
+                    <div ng-message="required">密码不能为空</div>
+                    <div ng-message="maxlength">密码不能大于15位数</div>
+                </div>
+            </md-input-container>
+        </form>
+    </main>
+    <footer class="clearfix">
+        <md-button class="md-raised md-primary">登入</md-button>
+        <p>忘记了密码?</p>
+    </footer>
+</article>

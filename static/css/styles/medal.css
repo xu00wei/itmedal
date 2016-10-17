@@ -1,0 +1,158 @@
+html {
+  background: #fff;
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.6rem; }
+
+li {
+  list-style: none; }
+
+input:focus {
+  outline: none; }
+
+a:not(.md-button) {
+  color: black;
+  text-decoration: none; }
+
+li, ul, body, p, span, a, h1, h2, h3, h4, img, button,
+nav, dl, dt, dd, ul, li, header, footer, input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline; }
+
+h1, h2, h3 {
+  font-weight: 400;
+  font-size: 1.8rem; }
+
+body {
+  min-width: 980px;
+  background: #fff; }
+
+button {
+  border: none;
+  background: #fff; }
+
+.md-button {
+  margin: 0; }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix::after {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both; }
+
+.content-box {
+  min-width: 960px;
+  max-width: 1024px;
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+.ib-middle:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle; }
+
+.center-all {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto; }
+
+.cart-icon {
+  padding: 10.5px 10px;
+  width: 30px;
+  border-radius: 50%;
+  background: #20f280;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  margin: auto; }
+  .cart-icon::after {
+    content: " ";
+    display: block;
+    height: 29px;
+    width: 30px;
+    position: absolute;
+    position: static;
+    background-image: url("../images/cart.png"); }
+
+#medal-item > nav {
+  padding: 30px 0 10px; }
+
+#medal-item > article {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(90, 138, 255, 0.2);
+  padding: 20px; }
+
+#medal-item .item {
+  padding: 10px 0; }
+  #medal-item .item header, #medal-item .item > div {
+    padding: 20px 0; }
+  #medal-item .item .go-buy {
+    display: inline-block;
+    color: #fff;
+    background: #18CBAE; }
+  #medal-item .item > header > div:nth-child(2) h3 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 15px; }
+  #medal-item .item > header > div:nth-child(2) > p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 40px; }
+  #medal-item .item > header table {
+    border-color: #000;
+    text-align: center; }
+    #medal-item .item > header table tr {
+      border-bottom: 1px solid;
+      padding: 5px; }
+    #medal-item .item > header table tr:last-child {
+      border-bottom: none; }
+    #medal-item .item > header table th, #medal-item .item > header table td {
+      padding: 5px; }
+
+#medal-item .else-like ul {
+  text-align: justify; }
+
+#medal-item .else-like li {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: 23%;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  float: none; }
+  #medal-item .else-like li .cart-icon {
+    bottom: -25px; }
+
+#medal-item .else-like li > div {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center; }
+
+#medal-item aside .now-hot li {
+  width: 200px; }
+  #medal-item aside .now-hot li img {
+    width: 60px;
+    float: left; }
+
+#medal-item aside .tag ul {
+  width: 200px; }
+
+#medal-item aside .tag li {
+  padding: 10px 20px;
+  background: #d23;
+  margin: 10px 10px 10px 0;
+  color: #fff; }

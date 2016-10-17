@@ -10,13 +10,13 @@ medal.controller("medalCtrl", function($scope,$state,Medal){
     }
 });
 
-medal.controller("medalListCtrl",function($scope){
-    $scope.medalList = [{
-        "cover": "../static/images/angular.png",
-        "price": "7.5",
-        "describe": "angular贴纸"
-    }];
+medal.controller("medalItemCtrl", function($scope,Tools){
+    $scope.medalList = Tools.genMedalItemList();
+    $scope.priceList = Tools.genItemPrice();
+})
 
+medal.controller("medalListCtrl",function($scope,Tools){
+    $scope.medalList = Tools.genMedalItemList();
 });
 
 

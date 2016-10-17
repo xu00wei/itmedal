@@ -1,0 +1,79 @@
+@import "common"
+//-- medal item --
+//----------------
+#medal-item
+    > nav
+        padding: 30px 0 10px
+
+    > article
+        background: #fff
+        box-shadow: 0 0 10px $shadowBule
+        padding: 20px
+
+    .item
+        padding: 10px 0
+
+        header,> div
+            padding: 20px 0
+
+        .go-buy
+            display: inline-block
+            color: #fff
+            background: $buttonGreen
+
+        > header 
+            > div:nth-child(2)
+                h3
+                    font-weight: 700
+                    font-size: 2rem
+                    margin-bottom: 15px
+                > p
+                    font-size: 1.4rem
+                    font-weight: 700
+                    margin-bottom: 40px
+            table
+                border-color: #000
+                text-align: center
+                tr
+                    border-bottom: 1px solid 
+                    padding: 5px
+                tr:last-child
+                    border-bottom: none
+                th,td
+                    padding: 5px
+    .else-like
+        ul
+            text-align: justify
+        li
+            display: inline-block
+            position: relative
+            text-align: center
+            width: 23%
+            padding-bottom: 30px
+            margin-bottom: 30px
+            float: none
+
+            .cart-icon
+                bottom: -25px
+
+        li > div
+            display: inline-block
+            vertical-align: middle
+            text-align: center
+
+    aside
+        .now-hot
+            li
+                width: 200px
+                img
+                    width: 60px
+                    float: left
+
+        .tag
+            ul
+                width: 200px
+            li
+                padding: 10px 20px
+                background: #d23
+                margin: 10px 10px 10px 0
+                color: #fff
