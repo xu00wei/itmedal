@@ -1,0 +1,81 @@
+<div  id="home-page">
+	<div class="content-box"> 
+		<p class="nav-sm"><span>首页 > </span>查询结果</p>
+		<div class="clearfix">
+			<div class="search">
+				<label for="home-search"></label>
+				<input type="search" placeholder="program" id="home-search">
+
+				<md-input-container class="md-block" flex-gt-sm>
+				              <label>State</label>
+				            	<md-select ng-model="user.state">
+					              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+					              	{{state.abbrev}}
+					              </md-option>
+				            	</md-select>
+			              </md-input-container>
+
+			              <md-button class="sh-btn">查询</md-button>
+			</div>
+		</div>
+	            	<md-content layout="column">
+			<div layout="row">
+				<p>
+					<span flex="25"></span>
+					<span flex="25"></span>
+					<span flex="25"></span>
+				</p>
+	            		</div>
+			<md-list flex>
+			        	<md-list-item  layout="row" layout-wrap ng-repeat="medal in buyList track by $index" ng-click="null">
+		                        		<div flex="25">
+			                        		<img ng-src="{{medal.cover}}" alt="">
+		                        		</div>
+		                        		<p flex="25" class="price">{{medal.price}}</p>
+		                        		<p flex="25" class="desc">{{medal.describe}}</p>
+		                        		<div  flex="25>
+			                        		<imgXsrc="" alt="">
+		                        		</div>
+			        	</md-list-item>
+	  		</md-list>
+		</md-content>	
+		<md-content>
+			<div layout="row">
+		              	<md-menu flex="25">
+		                    		<button ng-click="$mdOpenMenu()">分类</button>
+		                    		<md-menu-content class="dds">
+		                        			<md-menu-item><md-button>linux</md-button></md-menu-item>
+		                        			<md-menu-item><md-button>soft</md-button></md-menu-item>
+		                        			<md-menu-item><md-button>emoji</md-button></md-menu-item>
+		                    		</md-menu-content>
+		                	</md-menu>
+		                	<md-menu flex="25">
+		                    		<button ng-click="$mdOpenMenu()">分类</button>
+		                    		<md-menu-content class="dds">
+		                        			<md-menu-item><md-button>linux</md-button></md-menu-item>
+		                        			<md-menu-item><md-button>soft</md-button></md-menu-item>
+		                        			<md-menu-item><md-button>emoji</md-button></md-menu-item>
+		                    		</md-menu-content>
+		                	</md-menu>
+		                	<md-menu flex="25">
+		                    		<button ng-click="$mdOpenMenu()">分类</button>
+		                    		<md-menu-content class="dds">
+		                        			<md-menu-item><md-button>linux</md-button></md-menu-item>
+		                        			<md-menu-item><md-button>soft</md-button></md-menu-item>
+		                        			<md-menu-item><md-button>emoji</md-button></md-menu-item>
+		                    		</md-menu-content>
+		                	</md-menu>
+	            		</div>	
+			<md-list flex >
+			        	<md-list-item layout="row" layout-wrap ng-repeat="medal in wantList track by $index" ng-click="goItem(log.id)">
+			                    	<div flex=25>
+			                        		<img ng-src="{{medal.cover}}" alt="">
+			                    	</div>
+		                        		<p flex=25 class="price">{{medal.price}}</p>
+		                        		<p flex=25  class="desc">{{medal.describe}}</p>
+		                        		<div flex=25><img src="" alt=""></div>
+			        	</md-list-item>
+	  		</md-list>
+		</md-content>	
+	</div>
+</div>

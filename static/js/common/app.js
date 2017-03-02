@@ -1,27 +1,49 @@
-var app = angular.module("ItMadelApp",['ngMaterial','directive','index_ctrl','ui.router','tools']);
+var app = angular.module("ItMadelApp",['ngMaterial','directive','index_ctrl','home_ctrl','ui.router','tools']);
 app.config(function($stateProvider,$urlRouterProvider){
     "ngInject";
     //$stateProvider.when("");
     $urlRouterProvider.when("","home");
     $urlRouterProvider.when("/","home");
-
-    function getUrl(_url){
-        return "http://localhost:5000/html/"+_url;
-    }
-
-    function getState(_state){
-        return {
-            url: '/'+_state,
-            templateUrl: getUrl("index.html"),
-            controller: "indexCtrl"
-        }
+    var getUrl = function(urlName){
+        return "http://localhost:5000/html/"+urlName;
     }
 
     $stateProvider
-    .state("home", getState("home"))
-    .state("medal",getState("medal"))
-    .state("medalItem",getState("medalItem"))
-    .state("goodIdea",getState("goodIdea"))
-    .state("log",getState("log"))
-    .state("aboutUs",getState("aboutUs"))
+        .state("home", {
+            url: "/home",
+            controller: "homeCtrl as home",
+            templateUrl: getUrl("home.html")
+        })
+        .state("medal",{
+            url: "/medal",
+            controller: "medalCtrl as medal",
+            templateUrl: getUrl("medal.html")
+        })
+        .state("medalItem",{
+            url: "/medalItem",
+            templateUrl: getUrl("medal/medal-item.html")
+        })
+        .state("goodIdea",{
+            url: "/goodIdea",
+            templateUrl: getUrl("good-idea.html")
+        })
+        .state("log",{
+            url: "/log",
+            templateUrl: getUrl("log.html")
+        })
+        .state("logItem",{
+            url: "/logItem",
+            templateUrl: getUrl("log/log-item.html")
+        })
+        .state("aboutUs",{
+            url: "/aboutUs",
+            templateUrl: getUrl("about-us.html")
+        })
+})
+app.controller("appCtrl",function($scope){
+    "ngInject";
+    $scope.html = {
+        "title": "首页",
+        "isLockScroll": false,
+    };
 })

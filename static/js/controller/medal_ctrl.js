@@ -1,11 +1,12 @@
-var medal = angular.module("medal_ctrl",['medal_sv']);
+var medal = angular.module("medal_ctrl",['path',"medal_sv"]);
 
-medal.controller("medalCtrl", function($scope,$state,Medal){
+medal.controller("medalCtrl", function($scope,$state, $location,Path,Medal){
+    Path.init();
     $scope.medalCtrl = {};
-
-    Medal.init();
-    $scope.curHtmlTemp = Medal.getHtmlTemp();
-    $scope.medalCtrl.setHtmlTemp = function(_index){
+    $scope.toRight = Medal.toRightShow;
+    $scope.toLeft = Medal.toLeftShow;
+    $scope.curHtmlTemp = Path.getHtmlTemp();
+    $scope.medalCtrl.setHtmlTemp = function(index){
         $state.go("medalItem");
     }
 });

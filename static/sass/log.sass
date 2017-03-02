@@ -1,0 +1,24 @@
+@import "common"
+$pagingColor: black
+#logs
+    margin-top: 2px
+
+    .text
+        text-indent: 0.5cm
+    
+    > ul
+        display: table
+        margin: 0 auto
+
+    .pagination
+        width: 5px
+        height: 5px
+        margin: 0 10px 0 0
+        border-radius: 50%
+        background: $pagingColor
+        float: left
+        
+        &:active
+            width: 10px
+            height: 10px
+

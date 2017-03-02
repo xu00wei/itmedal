@@ -10,9 +10,10 @@ dr.directive("inputFocus",function(){
 
 dr.directive("lockScroll", function($window){
     return {
-        restrict: 'AE',
+        restrict: 'A',
         link: function(scope,element,attrs){
             scope.$watch(attrs["lockScroll"],function(newVal,oldVal){
+                if(newVal == null) return;
                 if(newVal==false){
                     element.css({
                         "max-height": "auto",

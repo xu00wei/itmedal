@@ -1,0 +1,116 @@
+@import "common"
+
+$activePurple:  #B2BBF5
+$hoverColor:  rgba(193,207,251,0.2)
+$search-radius: 20px
+
+#home-page
+    background: $bgPurple
+    padding-bottom: 20px 
+
+    > .content-box > *:not(p)
+        margin-top: 10px
+
+    > .content-box
+        padding: 10px 0 0
+
+    ._md-select-value
+        border: none
+
+    .search
+        display: inline-block
+        float: right
+
+        *
+            padding: 0
+        
+        > *
+            float: left
+            height: 28px
+            margin: 0 5px
+
+        input
+            width: 200px
+            padding: 5px 10px
+            border-radius: $search-radius
+            @include box-sizing
+
+        .sh-btn
+            background: $btnBlue
+            height: 28px
+            color: white
+            border-radius: $search-radius
+
+
+        ._md-select-value
+            background: white
+            border-radius: $search-radius
+            padding: 0 5px
+
+            span
+                position: relative
+                top: -1px
+
+        .md-button
+            padding: 0 10px
+            line-height: 28px
+
+    ._md-list
+        text-align: center
+
+    ._md-button-wrap 
+        .md-ink-ripple
+            color: $activePurple
+
+    ._md-list-item-inner
+            text-align: center
+
+    .shadow-box
+        margin: 10px 0 70px
+
+    .tittle
+        p
+            background: $navPurple
+            font-size: $fontSize4
+            text-align: center
+            padding: 5px 0
+            @include box-sizing(content-box)
+
+    .img-wrap
+        position: relative
+        height: 100px
+
+    img.medal
+        height: 80px
+        width: 80px
+
+    md-content
+            .md-button:not([disabled]):hover
+                background: $hoverColor
+
+    .md-wantnum
+        width: 150px
+        margin: auto
+
+    .icons
+        i
+            height: 20px
+            width: 20px
+            display: block
+            float: left
+
+            &:first-child
+                margin: 0 10px 0 0
+                background: url($img_ic_menu)
+                @include background-size
+
+            &:last-child
+                background: url($img_ic_apps)
+                @include background-size
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+<article class="content-box" ng-controller="logListCtrl">
+    <md-content>
+
+    <md-list flex ng-repeat="log in logs track by $index">
+        <md-list-item class="md-3-line md-long-text" ng-click="goItem(log.id)">
+          <div class="md-list-item-text">
+            <h3>{{log.title}}</h3>
+            <p>{{log.date}}</p>
+            <p class="text">{{log.text}}</p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-content>
+</article>

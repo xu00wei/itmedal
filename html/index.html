@@ -1,80 +1,82 @@
-<div class="lang content-box">
-    <div class="signin-container clearfix">
-        <a href="javascript:;" ng-click="toSignIn()">登入</a>
-        <a href="javascript:;" ng-click="toLogin()">注册</a>
+<div ng-controller="indexCtrl">
+    <div class="lang content-box">
+        <div class="signin-container clearfix">
+            <a href="javascript:;" ng-click="toSignIn()">登入</a>
+            <a href="javascript:;" ng-click="toLogin()">注册</a>
+        </div>
     </div>
+
+    <header id="index-header">
+
+        <nav class="clearfix content-box">
+            <div class="logo"><img src="../static/images/logo.png" alt="ITMedal-logo" /></div>
+            <ul class="clearfix">
+                <li ng-click="setTab(0)" ng-class="{'active':tab==0||tab==null}"><p>首页</p></li>
+                <li ng-click="setTab(1)" ng-class="{'active':tab==1}"><p>勋章</p></li>
+                <li ng-click="setTab(2)" ng-class="{'active':tab==2}"><p>GOOD IDEA</p></li>
+                <li ng-click="setTab(3)" ng-class="{'active':tab==3}"><p>日志</p></li>
+                <li ng-click="setTab(4)" ng-class="{'active':tab==4}"><p>关于我们</p></li>
+            </ul>
+     
+            <div class="search" ng-class="{'show':toInput,'line':needLine}" input-focus>
+                <button class="search-btn" >
+                    <i class="material-icons">search</i>
+                </button>
+                <button class="search-close-btn" ng-click="toInput=false">
+                    <i class="material-icons">close</i>
+                </button>
+                <input type="text" id="search-input" autocomplete="off" ng-model="search" ng-focus="needLine=true" ng-blur="needLine=false">
+                <label for="search-input" ng-class="{'writing':search.length>0}">Search</label>
+            </div>
+        </nav>
+    </header>
+    <div ng-include="curPage"></div>
+    <footer id="index-footer" layout="column">
+        <div class="content-box" layout="row" layout-wrap flex="auto">
+            <div flex="25">
+                <dl class="about-us">
+                    <dt >关于我们</dt>
+                    <dd>我们致力于为IT人提供专业的IT贴纸,以及密切关注IT人的需求.</dd>
+                </dl>
+            </div>
+            <div flex="25">
+                <dl class="contact-us">
+                    <dt >联系我们</dt>
+                    <dd><a class="location" href="">XXX</a></dd>
+                    <dd><a class="phonenum" href="">12332112345</a></dd>
+                    <dd><a class="e-mail" href="">123456@gmail.com</a></dd>
+                </dl>
+            </div>
+            <div flex="25">
+                <dl class="sitemap">
+                    <dt >sitemap</dt>
+                    <dd><a href="">勋章</a></dd>
+                    <dd><a href="">GOODIDEA</a></dd>
+                    <dd><a href="">日志</a></dd>
+                </dl>
+            </div>
+            <div flex="25" class="clearfix">
+                <dl class="qr-code">
+                    <dt>更多关注,请扫描二维码</dt>
+                    <dd><i></i></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="copyright content-box" flex="none">
+            <div class="copy">
+                <p>
+                    <span>@Copyright 2016 itstickers.com|All logos and trademarks are property of their respective owners.</span>
+                    <span></span>
+                </p>
+            </div>
+            <div class="shareto">
+                <i class="facebook"></i>
+                <i class="twitter"></i>
+                <i class="gplus"></i>
+            </div>
+        </div>
+    </footer>
+    <div login-form ng-if="showForm=='login'"></div>
+    <div sign-in-form ng-if="showForm=='signIn'"></div>
+    <div reset-password ng-if="showForm=='resetPassword'"></div>
 </div>
-
-<header id="index-header">
-
-    <nav class="clearfix content-box">
-        <div class="logo"><img src="../static/images/logo.png" alt="ITMedal-logo" /></div>
-        <ul class="clearfix">
-            <li ng-click="setTab(0)" ng-class="{'active':tab==0||tab==null}"><p>首页</p></li>
-            <li ng-click="setTab(1)" ng-class="{'active':tab==1}"><p>勋章</p></li>
-            <li ng-click="setTab(2)" ng-class="{'active':tab==2}"><p>GOOD IDEA</p></li>
-            <li ng-click="setTab(3)" ng-class="{'active':tab==3}"><p>日志</p></li>
-            <li ng-click="setTab(4)" ng-class="{'active':tab==4}"><p>关于我们</p></li>
-        </ul>
- 
-        <div class="search" ng-class="{'show':toInput,'line':needLine}" input-focus>
-            <button class="search-btn" >
-                <i class="material-icons">search</i>
-            </button>
-            <button class="search-close-btn" ng-click="toInput=false">
-                <i class="material-icons">close</i>
-            </button>
-            <input type="text" id="search-input" autocomplete="off" ng-model="search" ng-focus="needLine=true" ng-blur="needLine=false">
-            <label for="search-input" ng-class="{'writing':search.length>0}">Search</label>
-        </div>
-    </nav>
-</header>
-<div ng-include="curPage"></div>
-<footer id="index-footer" layout="column">
-    <div class="content-box" layout="row" layout-wrap flex="auto">
-        <div flex="25">
-            <dl class="about-us">
-                <dt >关于我们</dt>
-                <dd>我们致力于为IT人提供专业的IT贴纸,以及密切关注IT人的需求.</dd>
-            </dl>
-        </div>
-        <div flex="25">
-            <dl class="contact-us">
-                <dt >联系我们</dt>
-                <dd><a class="location" href="">XXX</a></dd>
-                <dd><a class="phonenum" href="">12332112345</a></dd>
-                <dd><a class="e-mail" href="">123456@gmail.com</a></dd>
-            </dl>
-        </div>
-        <div flex="25">
-            <dl class="sitemap">
-                <dt >sitemap</dt>
-                <dd><a href="">勋章</a></dd>
-                <dd><a href="">GOODIDEA</a></dd>
-                <dd><a href="">日志</a></dd>
-            </dl>
-        </div>
-        <div flex="25" class="clearfix">
-            <dl class="qr-code">
-                <dt>更多关注,请扫描二维码</dt>
-                <dd><i></i></dd>
-            </dl>
-        </div>
-    </div>
-    <div class="copyright content-box" flex="none">
-        <div class="copy">
-            <p>
-                <span>@Copyright 2016 itstickers.com|All logos and trademarks are property of their respective owners.</span>
-                <span></span>
-            </p>
-        </div>
-        <div class="shareto">
-            <i class="facebook"></i>
-            <i class="twitter"></i>
-            <i class="gplus"></i>
-        </div>
-    </div>
-    </div>
-</footer>
-<div login-form ng-if="showLoginPage"></div>
-<div sign-in-form ng-if="showSignInPage"></div>

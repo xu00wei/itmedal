@@ -10,7 +10,7 @@ var ngAnnotate = require('gulp-ng-annotate');
 
 var scriptsPath = './js';
 var scriptsDebugPath = './js/debug'
-var watchs = ["js/**/*.js","!js/debug/*.js"];
+var watchs = ["js/**/*.js","!js/debug/*.js","!js/**/*.min.js"];
 
 function getFolders(dir) {
     return fs.readdirSync(dir)
@@ -19,9 +19,8 @@ function getFolders(dir) {
       });
 }
 
-gulp.task('scripts', function() {
+function work(){
     var folders = getFolders(scriptsPath);
-
     var tasks = folders.map(function(folder) {
         if(folder!="debug") {
             console.log('------------'+folder+'------------');
@@ -29,15 +28,16 @@ gulp.task('scripts', function() {
                 .pipe(ngAnnotate())
                 .pipe(concat(folder + '.js'))
                 .pipe(gulp.dest(scriptsDebugPath))
-                .pipe(uglify())
-                .pipe(rename(folder + '.min.js'))
-                .pipe(gulp.dest(scriptsPath));
+                // .pipe(uglify())
+                // .pipe(rename(folder + '.min.js'))
+                // .pipe(gulp.dest(scriptsPath));
             return merge(tasks);
 
         }
     });
+}
 
-});
+gulp.task('scripts', work);
 
 //gulp.task('delete:debug',['scripts'],function(cb){
     //del([
@@ -45,7 +45,10 @@ gulp.task('scripts', function() {
     //], cb);
 //})
 
-gulp.task("watch:scripts",[],function(){
-     gulp.watch(watchs,['scripts']);
+gulp.task("watch:scripts",['scripts'],function(){
+     gulp.watch(watchs,function(event){
+        work();
+        console.log(event.path);
+     });
 })
 //gulp.task('default',['scripts']);

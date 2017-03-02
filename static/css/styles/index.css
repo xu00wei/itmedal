@@ -3,7 +3,9 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  color: #595959;
+  height: initial; }
 
 li {
   list-style: none; }
@@ -28,7 +30,9 @@ h1, h2, h3 {
 
 body {
   min-width: 980px;
-  background: #fff; }
+  background: #fff;
+  font-size: 1.4rem;
+  line-height: 2.4rem; }
 
 button {
   border: none;
@@ -50,9 +54,9 @@ button {
   max-width: 1024px;
   width: 100%;
   margin: auto;
-  box-sizing: border-box;
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
 
 .ib-middle:after {
   content: "";
@@ -88,6 +92,54 @@ button {
     position: static;
     background-image: url("../images/cart.png"); }
 
+.basePseudoElement {
+  content: " ";
+  display: block;
+  position: absolute; }
+
+.title {
+  font-size: 1.6rem;
+  line-height: 2.6rem; }
+
+.big-title {
+  font-size: 1.8rem;
+  line-height: 3rem; }
+
+.big-english {
+  font-size: 2rem;
+  line-height: 3.2rem; }
+
+.nav-sm > span {
+  color: #989BA2; }
+
+.md-button {
+  min-height: initial; }
+
+.md-wantnum {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #F3F3F3; }
+  .md-wantnum span {
+    width: 60%;
+    height: 10px;
+    display: block;
+    border-radius: 5px;
+    background: -prefix-linear-gradient(left, #13c4f0, #46f2cf);
+    background: linear-gradient(to right, #13c4f0, #46f2cf); }
+
+.point-icon {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  background: #E5E5E5;
+  border-radius: 50%; }
+
+.shadow-box {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
+
 .lang {
   height: 50px; }
   .lang .signin-container {
@@ -99,13 +151,13 @@ button {
     .lang .signin-container:last-child {
       float: right; }
     .lang .signin-container.active {
-      background: #5A8AFF; }
+      background: #3d94ff; }
     .lang .signin-container a {
       padding: 0 10px; }
 
 #index-header {
   height: 70px;
-  border-bottom: #ECECEC;
+  border-bottom: #E5E5E5;
   padding-bottom: 2px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3); }
   #index-header .logo {
@@ -114,15 +166,15 @@ button {
   #index-header ul {
     float: left;
     margin: 0 0 0 40px;
-    color: #777; }
+    color: #595959; }
     #index-header ul li {
       float: left;
       height: 100%;
       line-height: 70px;
       padding: 0 10px;
-      box-sizing: border-box;
       -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box; }
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box; }
       #index-header ul li P {
         cursor: pointer; }
       #index-header ul li.active p {
@@ -191,14 +243,29 @@ main {
   main .part-one {
     box-shadow: 0 1px 2px rgba(90, 138, 255, 0.2);
     position: relative;
-    z-index: 2; }
+    z-index: 2;
+    height: 234px; }
+    main .part-one .points {
+      text-align: center; }
+    main .part-one .point-icon {
+      margin: 5px; }
+    main .part-one .point-icon.active {
+      background: #595959; }
   main .slider {
-    padding: 0 20px;
-    color: #777; }
+    margin-right: 25px;
+    color: #595959; }
+    main .slider .item {
+      display: none; }
+    main .slider .item.active {
+      display: block; }
     main .slider .pics {
       padding: 30px;
       height: 174px;
       position: relative; }
+      main .slider .pics > li {
+        height: 100%; }
+        main .slider .pics > li div {
+          height: 100%; }
       main .slider .pics .dscp {
         position: relative; }
         main .slider .pics .dscp p {
@@ -206,22 +273,28 @@ main {
           font-size: 1.8rem;
           line-height: 3rem;
           height: 6rem; }
-    main .slider .toleft-icon {
+    main .slider .toleft-icon,
+    main .slider .toright-icon {
       background: transparent;
-      color: #777;
+      color: #595959;
       position: absolute;
       outline: none;
       cursor: default;
       top: 0;
-      bottom: 0;
+      bottom: 0; }
+    main .slider .toleft-icon {
       left: 0; }
+    main .slider .toright-icon {
+      right: 0; }
     main .slider .material-icons {
       cursor: pointer;
       font-size: 30px; }
     main .slider .icon > img {
-      float: right; }
+      display: block;
+      width: 218px;
+      margin: auto; }
   main .declaration {
-    background: #5A8AFF;
+    background: #3d94ff;
     color: #fff;
     padding: 30px 20px; }
     main .declaration p {
@@ -241,12 +314,12 @@ main {
       border-left: none;
       border-right: none; }
   main .part-two {
-    background: #EEF2FE; }
+    background: #f5f7fa; }
   main .shopping {
     margin: 0 auto;
     padding: 45px 0 0; }
     main .shopping .ctrl {
-      color: #777; }
+      color: #595959; }
       main .shopping .ctrl h2 {
         float: left;
         line-height: 40px;
@@ -259,7 +332,7 @@ main {
         main .shopping .ctrl .dl > button {
           padding: 0 45px;
           background: transparent;
-          color: #777; }
+          color: #595959; }
           main .shopping .ctrl .dl > button:focus {
             background: transparent; }
         main .shopping .ctrl .dl::after {
@@ -288,9 +361,9 @@ main {
         height: 250px;
         position: relative;
         overflow: hidden;
-        box-sizing: border-box;
         -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box; }
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; }
         main .shopping .goods a:hover {
           box-shadow: 0 0 10px rgba(90, 138, 255, 0.2); }
       main .shopping .goods a + i.cart-icon {
@@ -303,11 +376,11 @@ main {
         height: 50%;
         width: 50%;
         position: absolute;
-        transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
         -o-transform: rotate(45deg);
+        transform: rotate(45deg);
         left: -25%;
         top: -25%;
         background: #fdda31; }
@@ -319,11 +392,11 @@ main {
         position: absolute;
         content: "NEW";
         color: #000;
-        transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
         -moz-transform: rotate(-45deg);
         -webkit-transform: rotate(-45deg);
         -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
         left: 7%;
         top: 2%; }
       main .shopping .goods .img {
@@ -368,18 +441,6 @@ main {
       text-align: center; }
     main .want-medals .medals div {
       display: inline-block; }
-    main .want-medals .medals .md-wantnum {
-      width: 100%;
-      height: 10px;
-      border-radius: 5px;
-      background: #F3F3F3; }
-      main .want-medals .medals .md-wantnum span {
-        width: 60%;
-        height: 10px;
-        display: block;
-        border-radius: 5px;
-        background: -prefix-linear-gradient(left, #28B4F1, #18CCC0);
-        background: linear-gradient(to right, #28B4F1, #18CCC0); }
     main .want-medals .medals .is-mywant::after {
       content: " ";
       width: 30px;
@@ -393,8 +454,8 @@ main {
       background-size: auto 30px; }
   main .part-three {
     height: 200px;
-    background: -prefix-linear-gradient(left, #28B4F1, #18CCC0);
-    background: linear-gradient(to right, #28B4F1, #18CCC0); }
+    background: -prefix-linear-gradient(left, #13c4f0, #46f2cf);
+    background: linear-gradient(to right, #13c4f0, #46f2cf); }
     main .part-three .focusme > div {
       width: 33.33%;
       color: #fff;
@@ -435,9 +496,9 @@ main {
     border-top: 1px solid #fff;
     padding: 20px 0;
     height: 20px;
-    box-sizing: content-box;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
+    box-sizing: content-box;
     line-height: 20px;
     text-align: center; }
     #index-footer .copyright .copy {
@@ -445,7 +506,7 @@ main {
     #index-footer .copyright .shareto {
       float: right; }
 
-div[login-form], div[sign-in-form] {
+div[login-form], div[reset-password], div[sign-in-form] {
   position: absolute;
   left: 0;
   right: 0;
@@ -453,28 +514,87 @@ div[login-form], div[sign-in-form] {
   bottom: 0;
   background: rgba(238, 242, 254, 0.9);
   z-index: 1000; }
-  div[login-form] article, div[sign-in-form] article {
+  div[login-form] article, div[reset-password] article, div[sign-in-form] article {
     width: 30%;
     height: 326px;
     padding: 40px;
     background: #fff; }
-    div[login-form] article header, div[sign-in-form] article header {
+    div[login-form] article header, div[reset-password] article header, div[sign-in-form] article header {
       text-align: center; }
-      div[login-form] article header .close, div[sign-in-form] article header .close {
+      div[login-form] article header .close, div[reset-password] article header .close, div[sign-in-form] article header .close {
         position: absolute;
         right: 20px;
         cursor: pointer;
         top: 20px; }
-    div[login-form] article footer, div[sign-in-form] article footer {
+        div[login-form] article header .close img, div[reset-password] article header .close img, div[sign-in-form] article header .close img {
+          margin-top: 5px; }
+    div[login-form] article .clearfix, div[reset-password] article .clearfix, div[sign-in-form] article .clearfix {
       margin-top: 20px; }
-      div[login-form] article footer button, div[sign-in-form] article footer button {
-        float: left; }
-      div[login-form] article footer p, div[sign-in-form] article footer p {
+      div[login-form] article .clearfix button.md-raised, div[reset-password] article .clearfix button.md-raised, div[sign-in-form] article .clearfix button.md-raised {
+        float: left;
+        color: #fff;
+        background-color: #3d94ff; }
+        div[login-form] article .clearfix button.md-raised:hover, div[reset-password] article .clearfix button.md-raised:hover, div[sign-in-form] article .clearfix button.md-raised:hover {
+          background-color: #3d94ff; }
+      div[login-form] article .clearfix p, div[reset-password] article .clearfix p, div[sign-in-form] article .clearfix p {
         float: right;
         line-height: 36px;
-        color: #777; }
-      div[login-form] article footer a, div[sign-in-form] article footer a {
-        color: #000; }
+        color: #595959; }
+      div[login-form] article .clearfix a, div[reset-password] article .clearfix a, div[sign-in-form] article .clearfix a {
+        color: rgba(0, 0, 0, 0.7); }
+        div[login-form] article .clearfix a:hover, div[reset-password] article .clearfix a:hover, div[sign-in-form] article .clearfix a:hover {
+          color: #3d94ff; }
+
+div[reset-password] article {
+  height: 175px; }
+
+div[reset-password] footer p {
+  cursor: pointer; }
+  div[reset-password] footer p:active, div[reset-password] footer p:focus {
+    outline: none; }
+  .no-touch div[reset-password] footer p:hover {
+    color: #333; }
+
+div[sign-in-form] article {
+  height: 250px; }
+  div[sign-in-form] article .to-login {
+    width: 40px;
+    min-width: 40px;
+    height: 80px;
+    background: #3d94ff;
+    border-radius: 0;
+    position: absolute;
+    right: -40px;
+    bottom: 20px; }
+    div[sign-in-form] article .to-login p {
+      display: none;
+      width: 1em;
+      white-space: normal;
+      font-size: 1.6rem;
+      color: #fff;
+      margin: 0 auto;
+      margin-top: 4px; }
+    div[sign-in-form] article .to-login .material-icons {
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: 50%;
+      left: 8px;
+      margin-top: -12px;
+      color: #fff; }
+    div[sign-in-form] article .to-login:hover {
+      background: #3d94ff; }
+      div[sign-in-form] article .to-login:hover > p {
+        display: block; }
+      div[sign-in-form] article .to-login:hover > .material-icons {
+        display: none; }
+
+div[sign-in-form] footer p {
+  cursor: pointer; }
+  div[sign-in-form] footer p:active, div[sign-in-form] footer p:focus {
+    outline: none; }
+  .no-touch div[sign-in-form] footer p:hover {
+    color: #333; }
 
 @media (min-width: 960px) {
   md-menu-content[width="5"] {

@@ -139,3 +139,21 @@ button {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
+
+#logs {
+  margin-top: 2px; }
+  #logs .text {
+    text-indent: 0.5cm; }
+  #logs > ul {
+    display: table;
+    margin: 0 auto; }
+  #logs .pagination {
+    width: 5px;
+    height: 5px;
+    margin: 0 10px 0 0;
+    border-radius: 50%;
+    background: black;
+    float: left; }
+    #logs .pagination:active {
+      width: 10px;
+      height: 10px; }

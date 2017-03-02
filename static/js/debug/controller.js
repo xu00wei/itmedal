@@ -1,42 +1,81 @@
-var index = angular.module("index_ctrl",["index_sv","medal_ctrl","form_dr"]);
+var home = angular.module("home_ctrl",["home_sv"]);
+home.controller("homeCtrl", ["Tools", "$scope", function(Tools,$scope){
+    "ngInject";
+    $scope.buyList = Tools.genMedalItemList();
+    $scope.wantList = Tools.genWantList();
+}])
+var index = angular.module("index_ctrl",["index_sv","medal_ctrl","form_dr","log_ctrl"]);
 index.controller("indexCtrl",["$scope", "$state", "$location", "Index", function($scope,$state,$location,Index){
     "ngInject";
+    // page refresh
     Index.init();
     init();
 
     $scope.setTab = function(index){
-        var router = Index.getCurRouterByIndex(index);
-        $state.go(router);
+        Index.setIndex(index);
+        $scope.tab = Index.getIndex();
+        $scope.html.title = Index.getTitle();
+        $state.go(Index.getCurRouterByIndex(index));
     }
+
     function init(){
         $scope.tab = Index.getIndex();
-        $scope.indexCtrl = {
-            "pageTitle": "首页",
-            "isLockScroll": false
-        };
-        $scope.curPage = Index.getCurPage();
+        $scope.html.title = Index.getTitle();
         //$scope.curCtrl = Index.getCurCtrl();
     }
 
     $scope.toLogin = function(){
-        $scope.showLoginPage = true;
-        $scope.indexCtrl.isLockScroll = true;
+        $scope.showForm = "login";
+        $scope.html.isLockScroll = true;
+        $scope.html.style = {"height": "100%"};
     }
 
     $scope.toSignIn = function(){
-        $scope.showSignInPage = true;
-        $scope.indexCtrl.isLockScroll = true;
+        $scope.showForm = "signIn";
+        $scope.html.isLockScroll = true;
+        $scope.html.style = {"height": "100%"};
+    }
+
+    $scope.toResetPassword = function(){
+        $scope.showForm = "resetPassword";
+        $scope.html.isLockScroll = true;
+    }
+
+    $scope.closeForm = function(){
+        $scope.showForm = "none";
+        $scope.html.isLockScroll = false;
     }
 }]);
 
-var medal = angular.module("medal_ctrl",['medal_sv']);
+angular.module("log_ctrl",[])
 
-medal.controller("medalCtrl", ["$scope", "$state", "Medal", function($scope,$state,Medal){
+.controller("logCtrl", ["$scope", "Path", function($scope,Path){
+    "ngInject";
+    Path.init();
+    $scope.curHtmlTemp = Path.getHtmlTemp();
+
+}])
+
+.controller("logListCtrl", ["$scope", "$state", "Tools", function($scope,$state,Tools){
+    "ngInject";
+    $scope.logs = Tools.genLogList();
+    $scope.goItem = function(itemId){
+        $state.go("logItem",{"logid": itemId});
+    }
+
+}])
+
+
+
+var medal = angular.module("medal_ctrl",['path',"medal_sv"]);
+
+medal.controller("medalCtrl", ["$scope", "$state", "$location", "Path", "Medal", function($scope,$state, $location,Path,Medal){
+    Path.init();
     $scope.medalCtrl = {};
-
-    Medal.init();
-    $scope.curHtmlTemp = Medal.getHtmlTemp();
-    $scope.medalCtrl.setHtmlTemp = function(_index){
+    $scope.toRight = Medal.toRightShow;
+    $scope.toLeft = Medal.toLeftShow;
+    $scope.curHtmlTemp = Path.getHtmlTemp();
+    $scope.medalCtrl.setHtmlTemp = function(index){
         $state.go("medalItem");
     }
 }]);

@@ -18,6 +18,15 @@ angular.module("form_dr",["ngMessages"])
         }]
     }
 })
+.directive("resetPassword",function(){
+    return {
+        templateUrl: "/html/form/reset-password.html",
+        restrict: "AE",
+        controller: function(){
+
+        }
+    }
+})
 .directive("compareTo", function(){
     return {
         require: "ngModel",

@@ -139,3 +139,89 @@ button {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
+
+#home-page {
+  background: #EEF2FE;
+  padding-bottom: 20px; }
+  #home-page > .content-box > *:not(p) {
+    margin-top: 10px; }
+  #home-page > .content-box {
+    padding: 10px 0 0; }
+  #home-page ._md-select-value {
+    border: none; }
+  #home-page .search {
+    display: inline-block;
+    float: right; }
+    #home-page .search * {
+      padding: 0; }
+    #home-page .search > * {
+      float: left;
+      height: 28px;
+      margin: 0 5px; }
+    #home-page .search input {
+      width: 200px;
+      padding: 5px 10px;
+      border-radius: 20px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box; }
+    #home-page .search .sh-btn {
+      background: #5B8AFF;
+      height: 28px;
+      color: white;
+      border-radius: 20px; }
+    #home-page .search ._md-select-value {
+      background: white;
+      border-radius: 20px;
+      padding: 0 5px; }
+      #home-page .search ._md-select-value span {
+        position: relative;
+        top: -1px; }
+    #home-page .search .md-button {
+      padding: 0 10px;
+      line-height: 28px; }
+  #home-page ._md-list {
+    text-align: center; }
+  #home-page ._md-button-wrap .md-ink-ripple {
+    color: #B2BBF5; }
+  #home-page ._md-list-item-inner {
+    text-align: center; }
+  #home-page .shadow-box {
+    margin: 10px 0 70px; }
+  #home-page .tittle p {
+    background: #E2E6FF;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 5px 0;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box; }
+  #home-page .img-wrap {
+    position: relative;
+    height: 100px; }
+  #home-page img.medal {
+    height: 80px;
+    width: 80px; }
+  #home-page md-content .md-button:not([disabled]):hover {
+    background: rgba(193, 207, 251, 0.2); }
+  #home-page .md-wantnum {
+    width: 150px;
+    margin: auto; }
+  #home-page .icons i {
+    height: 20px;
+    width: 20px;
+    display: block;
+    float: left; }
+    #home-page .icons i:first-child {
+      margin: 0 10px 0 0;
+      background: url("../images/ic_menu.png");
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover; }
+    #home-page .icons i:last-child {
+      background: url("../images/ic_apps.png");
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover; }

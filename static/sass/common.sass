@@ -1,16 +1,33 @@
 // 全局变量
 //--------------------
 @mixin box-sizing($which:border-box)
-    box-sizing: $which
     -moz-box-sizing: $which
     -webkit-box-sizing: $which
+    box-sizing: $which
 
 @mixin transform($str)
-    transform: $str
     -ms-transform: $str  /* IE 9 */
     -moz-transform: $str /* Firefox */
     -webkit-transform: $str /* Safari and Chrome */
     -o-transform: $str /* Opera */
+    transform: $str
+
+@mixin transition($transition: all ease 200ms)
+    -moz-transition: $transition
+    -webkit-transition: $transition
+    -o-transition: $transition
+    transition: $transition
+
+@mixin box-shadow($shadow...)
+    -webkit-box-shadow: $shadow
+    -moz-box-shadow: $shadow
+    box-shadow: $shadow
+
+@mixin background-size($str: cover)
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
 
 @mixin top-triangle($width:10px,$height:10px,$color:#000)
     width: 0
@@ -26,25 +43,69 @@
     width: $width
     position: absolute
 
-$baseBlue: #5A8AFF
+$baseBlue: #3d94ff
+$btnBlue: #5B8AFF
+$baseWhite: #f5f7fa
+$baseRed: #ff573d
 $shadowBule: rgba(90,138,255,0.2)
 
-$fontColor: #777
+$fontColor1: #000  
+$fontColor2: #333
+$fontColor3: #595959
+$fontColor4: #E5E5E5
+$fontColor5: #989BA2
+
+$fontSize1: 2rem
+$fontSize2: 1.8rem
+$fontSize3: 1.6rem
+$fontSize4: 1.4rem
+
+$lineHeight1: 3.2rem
+$lineHeight2: 3rem
+$lineHeight3: 2.6rem
+$lineHeight4: 2.4rem
+
+$fontColor: $fontColor3
+$fontHoverColor: $fontColor2
 $footerFontColor: #777979
 $fontBlack: #7D7D7E
 $baseBlack: #232323
 
 $fc2: #DADBDD
-$lineColor: #ECECEC
-$mainBg: #EEF2FE
+$lineColor: $fontColor4
+$mainBg: $baseWhite
 $lineGray: #E1E1E1
 
-$shadeLeft: #28B4F1
-$shadeRight: #18CCC0
+$shadeLeft: #13c4f0
+$shadeRight: #46f2cf
 $baseGreen_9: rgba(238,242,254,.9)
 $buttonGreen: #18CBAE
 
 $backIconSize: 30px 
+
+$bgPurple: #EEF2FE
+$navPurple: #E2E6FF
+
+// imgs
+@function getImgUrl($name)
+    @return "../images/"+$name+".png"
+
+$img_alert: getImgUrl('alert')
+$img_cart: getImgUrl('cart')
+$img_cart_current: getImgUrl('car_current')
+$img_ic_apps: getImgUrl('ic_apps')
+$img_ic_menu: getImgUrl('ic_menu')
+$img_imac: getImgUrl('imac')
+$img_iwant: getImgUrl('iwant')
+$img_iwant_current: getImgUrl('iwant_current')
+$img_python: getImgUrl('python')
+$img_cxx: getImgUrl('c++')
+$img_debian: getImgUrl('debian')
+$img_qr: getImgUrl('qr')
+$img_search: getImgUrl('Search')
+
+
+
 
 // 共用类
 html
@@ -53,12 +114,14 @@ html
 
 body
     font-size: 1.6rem
-
+    color: $fontColor
+    height: initial
 li
     list-style: none
 
 input:focus
     outline: none
+
 a:not(.md-button)
     color: black
     text-decoration: none
@@ -73,14 +136,20 @@ nav,dl,dt,dd,ul,li,header,footer,input
 h1,h2,h3
     font-weight: 400
     font-size: 1.8rem
+
 body
     min-width: 980px
     background: #fff
+    font-size: $fontSize4
+    line-height: $lineHeight4
+
 button
     border: none
     background: #fff
+
 .md-button
     margin: 0
+
 .clearfix
     *zoom: 1
     &::after
@@ -126,3 +195,52 @@ button
         @include new-block($width:30px,$height:29px)
         position: static
         background-image: url('../images/cart.png')
+
+.basePseudoElement
+    content: " "
+    display: block
+    position: absolute
+
+.title
+    font-size: $fontSize3
+    line-height: $lineHeight3
+
+.big-title
+    font-size: $fontSize2
+    line-height: $lineHeight2
+
+.big-english
+    font-size: $fontSize1
+    line-height: $lineHeight1
+
+.nav-sm > span
+    color: $fontColor5
+
+.md-button
+    min-height: initial 
+
+.md-wantnum
+    width: 100%
+    height: 10px
+    border-radius: 5px
+    background: #F3F3F3
+    
+    span
+        width: 60%
+        height: 10px
+        display: block
+        border-radius: 5px
+        background: -prefix-linear-gradient(left, $shadeLeft, $shadeRight)
+        background: linear-gradient(to right, $shadeLeft, $shadeRight)
+
+$smallPointIcon: 8px
+
+.point-icon
+    display: inline-block
+    height: $smallPointIcon
+    width: $smallPointIcon
+    background: $fontColor4
+    border-radius: 50%
+
+.shadow-box
+    @include box-shadow(0 0 5px rgba(0,0,0,0.3))

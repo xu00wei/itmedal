@@ -1,7 +1,9 @@
 <article class="login center-all">
     <header>
         <h2>注册</h2>
-        <i>close</i>
+        <md-button class="md-icon-button close" aria-label="More" ng-click="closeForm()">
+            <i class="material-icons">clear</i>
+        </md-button>
     </header>
     <main>
         <form name="loginForm">
@@ -38,8 +40,8 @@
         </form>
     </main>
     <footer class="clearfix">
-        <md-button class="md-raised md-primary">注册</md-button>
-        <p>已经有了帐号?<a href="javascript:;">登入</a></p>
+        <md-button class="md-raised">注册</md-button>
+        <p>已经有了帐号? &nbsp;<a href="javascript:;" ng-click="toSignIn()">登入</a></p>
     </footer>
 </article>
 

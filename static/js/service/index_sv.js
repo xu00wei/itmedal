@@ -1,38 +1,36 @@
 var sv = angular.module("index_sv",[]);
 
 sv.service("Index",function($location){
-    var path;
-    var index;
-    var routers = ["home","medal","goodIdea","log","aboutUs"];
-    var pages = ["./html/home.html","./html/medal.html","./html/good-idea.html","./html/log.html","./html/about-us.html"];
+    var _path;
+    var _index;
+    var _title = ["首页","勋章","GOOD IDEA","日志","关于我们"];
+    var _routers = ["home","medal","goodIdea","log","aboutUs"];
+    var _pages = ["./html/home.html","./html/medal.html","./html/good-idea.html","./html/log.html","./html/about-us.html"];
     //var ctrls = ["homeCtrl","medalCtrl","goodIdeaCtrl","logCtrl","aboutUsCtrl"];
 
-    this.setIndex = function(_index){
-        index = _index;
+    this.setIndex = function(index){
+        _index = index;
     }
 
     this.getIndex = function(){
-        return index;
+        return _index;
     }
 
-    this.getCurRouterByIndex = function(_index){
-         return routers[_index]
+    this.getTitle = function(index){
+        if(index) return _title[index];
+         return _title[_index];
     }
 
-    this.getCurPage = function(){
-        return pages[index];
-    }
-
-    this.getCurCtrl = function(){
-        return ctrls[index];
+    this.getCurRouterByIndex = function(index){
+         return _routers[index];
     }
 
     this.init = function(){
-        path = $location.path();
-        index = 0;
-        for(var i in routers){
-            if(path.indexOf(routers[i])>=0){
-                index = Number(i);
+        _path = $location.path();
+        _index = 0;
+        for(var i in _routers){
+            if(_path.indexOf(_routers[i])>=0){
+                _index = Number(i);
             }
         }
     }

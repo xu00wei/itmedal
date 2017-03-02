@@ -1,0 +1,69 @@
+<div  id="home-page">
+	<div class="content-box"> 
+		<p class="nav-sm"><span>首页 > </span>查询结果</p>
+		<div class="clearfix">
+			<div class="search">
+				<label for="home-search"></label>
+				<input type="search" placeholder="program" id="home-search">
+
+				<md-input-container class="md-block" flex-gt-sm>
+				              <label>所有分类</label>
+				            	<md-select ng-model="user.state">
+					              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+					              	{{state.abbrev}}
+					              </md-option>
+				            	</md-select>
+			              </md-input-container>
+
+			              <md-button class="sh-btn">查询</md-button>
+			</div>
+		</div>
+		<div class="icons clearfix">
+			<i></i>
+			<i></i>
+		</div>
+	            	<md-content layout="column" class="shadow-box">
+			<div class="tittle">
+				<p  layout="row">
+					<span flex="25">勋章</span>
+					<span flex="25">名称</span>
+					<span flex="25">价格</span>
+				</p>
+	            		</div>
+			<md-list flex>
+			        	<md-list-item  layout="row" layout-wrap ng-repeat="medal in buyList track by $index" ng-click="null">
+		                        		<div class="img-wrap" flex="25">
+			                        		<img class="medal center-all" ng-src="{{medal.cover}}" alt="">
+		                        		</div>
+		                        		<p flex="25" class="desc">{{medal.describe}}</p>
+		                        		<p flex="25" class="price">{{medal.price}}</p>
+		                        		<div  flex="25>
+			                        		<imgXsrc="" alt="">
+		                        		</div>
+			        	</md-list-item>
+	  		</md-list>
+		</md-content>	
+		<md-content class="shadow-box">
+			<div class="tittle">
+		              	<p  layout="row" layout-wrap>
+					<span flex="25">勋章</span>
+					<span flex="25">名称</span>
+					<span flex="25">想要</span>
+				</p>
+	            		</div>	
+			<md-list flex >
+			        	<md-list-item layout="row" layout-wrap ng-repeat="medal in wantList track by $index" ng-click="goItem(log.id)">
+			                    	<div class="img-wrap" flex=25>
+			                        		<img class="medal center-all" ng-src="{{medal.cover}}" alt="">
+			                    	</div>
+		                        		<p flex=25  class="desc">{{medal.describe}}</p>
+		                        		<div flex=25>		                        		<p  class="md-wantnum"><span></span></p>
+		                        			<p>{{medal.wantNum}}</p>
+		                        		</div>
+
+		                        		<div flex=25><img src="" alt=""></div>
+			        	</md-list-item>
+	  		</md-list>
+		</md-content>	
+	</div>
+</div>
