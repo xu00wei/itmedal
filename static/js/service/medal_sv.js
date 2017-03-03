@@ -1,27 +1,62 @@
 var sv = angular.module("medal_sv",[]);
-sv.service("Medal", function(){
-    var elements = document.querySelectorAll(".slider ul > .item");
-    var points = document.querySelectorAll(".points > li");
+sv.service("Medal", function($timeout){
+    "ngInject"
+    var elements;
+    var points;
+
+    // 页面切换时需更新
+    this.init = function(){
+        elements = document.querySelectorAll(".slider ul > .item");
+        points = document.querySelectorAll(".points > li");
+    }
 
     this.toRightShow = function(){
         var actIndex = getActiveIndex(elements);
         var nextIndex = (actIndex+1)%elements.length;
+        var actElement = angular.element(elements[actIndex]);
+        var nextElement = angular.element(elements[nextIndex]);
+        if(actElement.hasClass("left") || actElement.hasClass("right")) return ;
 
-        angular.element(elements[actIndex]).removeClass("active");
-        angular.element(points[actIndex]).removeClass("active");
-        angular.element(elements[nextIndex]).addClass("active");
-        angular.element(points[nextIndex]).addClass("active");
+        nextElement.addClass("next");
+
+        $timeout(function(){
+            nextElement.addClass("left");
+            actElement.addClass("left");
+        }, 100)
+
+        $timeout(function(){
+            actElement.removeClass("active left");
+            angular.element(points[actIndex]).removeClass("active");
+
+            nextElement.addClass("active");
+            nextElement.removeClass("next left");
+            angular.element(points[nextIndex]).addClass("active");  
+        }, 700)
 
     }
 
     this.toLeftShow = function(){
         var actIndex = getActiveIndex(elements);
         var preIndex = actIndex-1 < 0 ? elements.length-1 : (actIndex -1);
+        var actElement = angular.element(elements[actIndex]);
+        var preElement = angular.element(elements[preIndex]);
 
-        angular.element(elements[actIndex]).removeClass("active");
-        angular.element(points[actIndex]).removeClass("active");
-        angular.element(elements[preIndex]).addClass("active");
-        angular.element(points[preIndex]).addClass("active");
+        preElement.addClass("prev");
+
+        $timeout(function(){
+            preElement.addClass("right");
+            actElement.addClass("right");
+        }, 100)
+
+        $timeout(function(){
+            actElement.removeClass("active right");
+            angular.element(points[actIndex]).removeClass("active");
+
+            preElement.addClass("active");
+            preElement.removeClass("prev right");
+            angular.element(points[preIndex]).addClass("active");   
+        }, 700)
+
     }
 
     function getActiveIndex(eles){
@@ -34,4 +69,5 @@ sv.service("Medal", function(){
         }
         return -1;
     }
+
 });

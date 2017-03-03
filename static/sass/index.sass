@@ -146,6 +146,39 @@ main
 
         .item
             display: none
+            width: 100%
+            overflow: hidden
+            position: relative
+            @include transition(transform ease-in-out 500ms)
+
+        .item.left
+            @include transform(translate(100%,0))
+
+        .item.prev,
+        .item.next
+            display: block
+            position: absolute
+            top: 0
+            width: 100%
+
+        .item.active.left
+            @include transform(translate(-100%,0))
+
+
+        .item.active.right
+            @include transform(translate(100%,0))
+
+        .item.next
+            @include transform(translate(100%,0))
+
+        .item.prev
+            @include transform(translate(-100%,0))
+
+        .item.prev.right,
+        .item.next.left
+            @include transform(translate(0,0))
+
+
 
         .item.active
             display: block
@@ -155,7 +188,12 @@ main
             height: 174px
             position: relative
 
-            > li
+            >ul
+                overflow: hidden
+                position: relative
+
+            > ul, 
+            >ul .item
                 height: 100%
 
                 div
@@ -188,6 +226,7 @@ main
 
         .material-icons
             cursor: pointer
+            outline: none
             font-size: $backIconSize
 
         .icon>img

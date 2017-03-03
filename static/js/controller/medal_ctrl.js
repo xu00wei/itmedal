@@ -2,6 +2,7 @@ var medal = angular.module("medal_ctrl",['path',"medal_sv"]);
 
 medal.controller("medalCtrl", function($scope,$state, $location,Path,Medal){
     Path.init();
+    Medal.init();
     $scope.medalCtrl = {};
     $scope.toRight = Medal.toRightShow;
     $scope.toLeft = Medal.toLeftShow;
