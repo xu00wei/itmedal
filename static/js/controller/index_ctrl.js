@@ -1,6 +1,10 @@
 var index = angular.module("index_ctrl",["index_sv","medal_ctrl","form_dr","log_ctrl"]);
 index.controller("indexCtrl",function($scope,$state,$location,Index){
     "ngInject";
+    //---
+    // 页面头部导航条操作
+    // 登入注册页面的操作
+    //---
     // page refresh
     Index.init();
     init();

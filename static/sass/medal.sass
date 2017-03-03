@@ -1,4 +1,6 @@
 @import "common"
+$activeBlue: #03A9F3
+
 //-- medal item --
 //----------------
 #medal-item
@@ -10,6 +12,13 @@
         box-shadow: 0 0 10px $shadowBule
         padding: 20px
 
+    header
+        img
+            display: block
+            position: relative
+            margin: auto
+            right: 10px
+
     .item
         padding: 10px 0
 
@@ -20,6 +29,17 @@
             display: inline-block
             color: #fff
             background: $buttonGreen
+            padding: 0 15px
+
+            &::before
+                content: " "
+                display: block
+                height: 18px
+                width: 18px
+                float: left
+                margin: 9px 5px 0 0
+                background: url($img_cart_current) no-repeat
+                background-size: 18px
 
         > header 
             > div:nth-child(2)
@@ -39,8 +59,6 @@
                     padding: 5px
                 tr:last-child
                     border-bottom: none
-                th,td
-                    padding: 5px
     .else-like
         ul
             text-align: justify
@@ -65,15 +83,42 @@
         .now-hot
             li
                 width: 200px
+                margin: 20px 0 0
+                line-height: 30px
+
                 img
                     width: 60px
+                    margin: 0 15px
                     float: left
 
+                &.active
+                    border-left: 3px solid $activeBlue
+
+            h2
+                font-size: $fontSize4
+
         .tag
+            margin-top: 50px 
             ul
                 width: 200px
+
             li
-                padding: 10px 20px
+                position: relative
+                padding: 0 30px
                 background: #d23
                 margin: 10px 10px 10px 0
                 color: #fff
+                @include box-shadow(0 0 5px $shadowBule)
+
+                &:before
+                    content: " "
+                    display: block
+                    width: 6px
+                    height: 6px
+                    background: white
+                    border-radius: 50%
+                    position: absolute
+                    top: 50%
+                    margin-top: -3px
+                    left: 12px
+

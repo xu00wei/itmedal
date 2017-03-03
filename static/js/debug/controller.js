@@ -4,9 +4,20 @@ home.controller("homeCtrl", ["Tools", "$scope", function(Tools,$scope){
     $scope.buyList = Tools.genMedalItemList();
     $scope.wantList = Tools.genWantList();
 }])
+
+home.controller("donateInfoCtrl", ["$scope", "Tools", function($scope, Tools){
+    "ngInject";
+    $scope.dntTargetList = Tools.genDonateList();
+    $scope.month = 8;
+    $scope.monthMoney = 123;
+}])
 var index = angular.module("index_ctrl",["index_sv","medal_ctrl","form_dr","log_ctrl"]);
 index.controller("indexCtrl",["$scope", "$state", "$location", "Index", function($scope,$state,$location,Index){
     "ngInject";
+    //---
+    // 页面头部导航条操作
+    // 登入注册页面的操作
+    //---
     // page refresh
     Index.init();
     init();
@@ -72,18 +83,26 @@ var medal = angular.module("medal_ctrl",['path',"medal_sv"]);
 medal.controller("medalCtrl", ["$scope", "$state", "$location", "Path", "Medal", function($scope,$state, $location,Path,Medal){
     Path.init();
     Medal.init();
+    // can use to medalItem in html
     $scope.medalCtrl = {};
+
+    //carousel
     $scope.toRight = Medal.toRightShow;
     $scope.toLeft = Medal.toLeftShow;
+
+    //page to medalItem or medalList
     $scope.curHtmlTemp = Path.getHtmlTemp();
     $scope.medalCtrl.setHtmlTemp = function(index){
         $state.go("medalItem");
     }
+
 }]);
 
-medal.controller("medalItemCtrl", ["$scope", "Tools", function($scope,Tools){
+medal.controller("medalItemCtrl", ["$scope", "Tools", "Medal", function($scope,Tools,Medal){
     $scope.medalList = Tools.genMedalItemList();
     $scope.priceList = Tools.genItemPrice();
+    $scope.labels = Medal.getLabels();
+
 }])
 
 medal.controller("medalListCtrl",["$scope", "Tools", function($scope,Tools){

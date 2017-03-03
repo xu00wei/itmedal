@@ -99,7 +99,6 @@
             overflow: hidden
             left: 0
             right: 0
-            top: 7px
             bottom: 0
 
 
@@ -121,6 +120,19 @@
             visibility: visible
             left: 0
             width: 100%
+
+md-menu-content._md-menu-bar-menu.md-dense md-menu-item>.md-button
+    color: $baseBlue
+
+md-menu-content._md-menu-bar-menu.md-dense .md-button span
+    color: $fontColor3
+
+md-menu-content .md-button:not([disabled]):hover
+    background-color: $mainBg
+
+md-menu-content .md-button:not([disabled]).md-focused
+    background-color: $mainBg
+
 main
     overflow-x: hidden
 
@@ -192,7 +204,7 @@ main
                 overflow: hidden
                 position: relative
 
-            > ul, 
+            > ul:not(".points"), 
             >ul .item
                 height: 100%
 
@@ -268,6 +280,7 @@ main
     .shopping
         margin: 0 auto
         padding: 45px 0 0
+
             
         .ctrl
             color: $fontColor
@@ -307,6 +320,18 @@ main
             &>div
                 position: relative
                 padding: 15px
+
+            .md-button
+                width: 100%
+                padding: 0
+                @include transition(all linear 400ms)
+                @include box-sizing()
+                color: #BCD6FA
+
+                &:hover
+                    box-shadow: 0 20px 60px rgba(0,0,0,0.3)
+                    @include transform(translate3d(0,0,100px))
+
             a
                 background: white
                 display: block
@@ -314,15 +339,19 @@ main
                 height: 250px
                 position: relative
                 overflow: hidden
-                @include box-sizing()
 
-                &:hover
-                    box-shadow: 0 0 10px $shadowBule
+            .more
+                height: 250px
+                line-height: 250px
+                font-size: 2.3rem
+                border: dashed 1px $fontColor5
+                color: black
 
-            a + i.cart-icon
+
+            .md-button + i.cart-icon
                 display: none
 
-            a:hover + i.cart-icon
+            .md-button:hover + i.cart-icon
                 display: block
                 
             .new

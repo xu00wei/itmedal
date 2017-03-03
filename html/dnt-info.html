@@ -1,0 +1,34 @@
+<div  id="home-page" class="dnt">
+    <div class="content-box"> 
+        <p class="nav-sm"><span>首页 > </span>查询结果</p>
+        <p class="dnt-header">
+            <span>总捐款</span>
+            <span>{{month}}月捐款</span>
+            <i class="icon-month"></i>
+        </p>
+        <md-content class="shadow-box">
+            <div class="tittle">
+                <p  layout="row" >
+                    <span flex="25" flex-offset="25">名称</span>
+                    <span flex="25" flex-offset="25">想要</span>
+                </p>
+            </div>
+            <article class="content" layout="row" layout-wrap>
+                <h2 flex="25"><div>
+                    <p class="center-all">{{month}}月捐款: 
+                    <span>¥{{monthMoney}}</span></p>
+                </div></h2>
+                <md-list  flex="75">
+                            <md-list-item layout="row" ng-repeat="target in dntTargetList track by $index">
+                                <p flex="70">{{target.name}} <span>({{target.desc}})</span></p>
+                                <p flex="10">¥{{target.get_money}}</p>
+                            </md-list-item>
+                            <md-list-item class="total">
+                                <p flex="70">总捐款</p>
+                                <p flex="10">¥{{monthMoney}}</p>
+                            </md-list-item>
+                </md-list>
+            </article>  
+        </md-content>   
+    </div>
+</div>

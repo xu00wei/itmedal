@@ -4,3 +4,10 @@ home.controller("homeCtrl", function(Tools,$scope){
     $scope.buyList = Tools.genMedalItemList();
     $scope.wantList = Tools.genWantList();
 })
+
+home.controller("donateInfoCtrl", function($scope, Tools){
+    "ngInject";
+    $scope.dntTargetList = Tools.genDonateList();
+    $scope.month = 8;
+    $scope.monthMoney = 123;
+})

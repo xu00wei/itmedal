@@ -1,6 +1,7 @@
 var sv = angular.module("medal_sv",[]);
-sv.service("Medal", function($timeout){
+sv.service("Medal", function($timeout, Tools){
     "ngInject"
+    //轮播图操作
     var elements;
     var points;
 
@@ -8,6 +9,25 @@ sv.service("Medal", function($timeout){
     this.init = function(){
         elements = document.querySelectorAll(".slider ul > .item");
         points = document.querySelectorAll(".points > li");
+    }
+
+    this.getLabels = function(){
+        var labels = Tools.genLabels;
+        var lbs = [];
+        var len = labels.length;
+        for(var i = 0; i < len; i++){
+            var lb = {};
+            lb.name = labels[i];
+            lb.color =  getColor();
+            lbs.push(lb);
+        }
+        return lbs;
+    }
+
+    function getColor(){
+        var colors = ["#4FC8D1","#5B8AFF","#EF7F4F","#43DB8E","#20B5E2","#777AE8","#EE77E5","#F05555"];
+        var maxIndex = colors.length;
+        return colors[parseInt(Math.random()*1569%maxIndex)];
     }
 
     this.toRightShow = function(){
@@ -69,5 +89,7 @@ sv.service("Medal", function($timeout){
         }
         return -1;
     }
+
+
 
 });

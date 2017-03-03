@@ -7,10 +7,10 @@
                     <button ng-click="$mdOpenMenu()">分类</button>
                     <md-menu-content class="dds">
                         <md-menu-item >
-                            <md-button class="md-primary">linux</md-button>
+                            <md-button>linux</md-button>
                         </md-menu-item>
                         <md-menu-item ng-focus="" ng-style="fcStyle">
-                            <md-button class="md-warn">soft</md-button>
+                            <md-button>soft</md-button>
                         </md-menu-item>
                         <md-menu-item>
                             <md-button>emoji</md-button>
@@ -35,6 +35,7 @@
         </div>
         <div layout="row" layout-wrap class="goods">
             <div flex="25" ng-repeat="medal in medalList track by $index">
+                <md-button> 
                 <a class="new" ng-click="medalCtrl.setHtmlTemp(1)">
                     <div class="img center-all">
                         <img ng-src="{{medal.cover}}" alt="">
@@ -42,8 +43,18 @@
                         <p class="desc">{{medal.describe}}</p>
                     </div>
                 </a>
+                </md-button>
                 <i class="cart-icon"></i>
             </div>
+
+            <div flex="25">
+                <md-button> 
+                    <p class="more">更多</p>
+                </md-button>
+            </div>
+
+
+
         </div>
     </div>
 

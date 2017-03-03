@@ -36,4 +36,21 @@ tools.service("Tools",function(){
         }
         return [log,log,log,log];
     }
+
+    this.genDonateList = function(){
+        var python = {
+            "name": "PYTHON",
+            "desc": "The Python Foundation",
+            "get_money": "5.6"
+        },
+        git = {
+            "name": "GIT",
+            "desc": "Software Freedom Conservancy",
+            "get_money": "10.8"
+        }
+        return [python,git,git,git,python,git,python,python,git,python,python,python,git,git,python,python];
+    }
+
+    this.genLabels = ["前端","Web","Javascript"];
+
 })

@@ -136,9 +136,9 @@ button {
   border-radius: 50%; }
 
 .shadow-box {
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); }
 
 .lang {
   height: 50px; }
@@ -151,7 +151,7 @@ button {
     .lang .signin-container:last-child {
       float: right; }
     .lang .signin-container.active {
-      background: #3d94ff; }
+      background: #5B8AFF; }
     .lang .signin-container a {
       padding: 0 10px; }
 
@@ -219,7 +219,6 @@ button {
       overflow: hidden;
       left: 0;
       right: 0;
-      top: 7px;
       bottom: 0; }
       #index-header .search label::after {
         content: ' ';
@@ -237,6 +236,18 @@ button {
       visibility: visible;
       left: 0;
       width: 100%; }
+
+md-menu-content._md-menu-bar-menu.md-dense md-menu-item > .md-button {
+  color: #5B8AFF; }
+
+md-menu-content._md-menu-bar-menu.md-dense .md-button span {
+  color: #595959; }
+
+md-menu-content .md-button:not([disabled]):hover {
+  background-color: #f5f7fa; }
+
+md-menu-content .md-button:not([disabled]).md-focused {
+  background-color: #f5f7fa; }
 
 main {
   overflow-x: hidden; }
@@ -315,10 +326,10 @@ main {
       main .slider .pics > ul {
         overflow: hidden;
         position: relative; }
-      main .slider .pics > ul,
+      main .slider .pics > ul:not(".points"),
       main .slider .pics > ul .item {
         height: 100%; }
-        main .slider .pics > ul div,
+        main .slider .pics > ul:not(".points") div,
         main .slider .pics > ul .item div {
           height: 100%; }
       main .slider .pics .dscp {
@@ -350,7 +361,7 @@ main {
       width: 218px;
       margin: auto; }
   main .declaration {
-    background: #3d94ff;
+    background: #5B8AFF;
     color: #fff;
     padding: 30px 20px; }
     main .declaration p {
@@ -410,21 +421,40 @@ main {
       main .shopping .goods > div {
         position: relative;
         padding: 15px; }
+      main .shopping .goods .md-button {
+        width: 100%;
+        padding: 0;
+        -moz-transition: all linear 400ms;
+        -webkit-transition: all linear 400ms;
+        -o-transition: all linear 400ms;
+        transition: all linear 400ms;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        color: #BCD6FA; }
+        main .shopping .goods .md-button:hover {
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+          -ms-transform: translate3d(0, 0, 100px);
+          -moz-transform: translate3d(0, 0, 100px);
+          -webkit-transform: translate3d(0, 0, 100px);
+          -o-transform: translate3d(0, 0, 100px);
+          transform: translate3d(0, 0, 100px); }
       main .shopping .goods a {
         background: white;
         display: block;
         width: 100%;
         height: 250px;
         position: relative;
-        overflow: hidden;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box; }
-        main .shopping .goods a:hover {
-          box-shadow: 0 0 10px rgba(90, 138, 255, 0.2); }
-      main .shopping .goods a + i.cart-icon {
+        overflow: hidden; }
+      main .shopping .goods .more {
+        height: 250px;
+        line-height: 250px;
+        font-size: 2.3rem;
+        border: dashed 1px #989BA2;
+        color: black; }
+      main .shopping .goods .md-button + i.cart-icon {
         display: none; }
-      main .shopping .goods a:hover + i.cart-icon {
+      main .shopping .goods .md-button:hover + i.cart-icon {
         display: block; }
       main .shopping .goods .new::before {
         content: " ";
@@ -589,9 +619,9 @@ div[login-form], div[reset-password], div[sign-in-form] {
       div[login-form] article .clearfix button.md-raised, div[reset-password] article .clearfix button.md-raised, div[sign-in-form] article .clearfix button.md-raised {
         float: left;
         color: #fff;
-        background-color: #3d94ff; }
+        background-color: #5B8AFF; }
         div[login-form] article .clearfix button.md-raised:hover, div[reset-password] article .clearfix button.md-raised:hover, div[sign-in-form] article .clearfix button.md-raised:hover {
-          background-color: #3d94ff; }
+          background-color: #5B8AFF; }
       div[login-form] article .clearfix p, div[reset-password] article .clearfix p, div[sign-in-form] article .clearfix p {
         float: right;
         line-height: 36px;
@@ -599,7 +629,7 @@ div[login-form], div[reset-password], div[sign-in-form] {
       div[login-form] article .clearfix a, div[reset-password] article .clearfix a, div[sign-in-form] article .clearfix a {
         color: rgba(0, 0, 0, 0.7); }
         div[login-form] article .clearfix a:hover, div[reset-password] article .clearfix a:hover, div[sign-in-form] article .clearfix a:hover {
-          color: #3d94ff; }
+          color: #5B8AFF; }
 
 div[reset-password] article {
   height: 175px; }
@@ -617,7 +647,7 @@ div[sign-in-form] article {
     width: 40px;
     min-width: 40px;
     height: 80px;
-    background: #3d94ff;
+    background: #5B8AFF;
     border-radius: 0;
     position: absolute;
     right: -40px;
@@ -639,7 +669,7 @@ div[sign-in-form] article {
       margin-top: -12px;
       color: #fff; }
     div[sign-in-form] article .to-login:hover {
-      background: #3d94ff; }
+      background: #5B8AFF; }
       div[sign-in-form] article .to-login:hover > p {
         display: block; }
       div[sign-in-form] article .to-login:hover > .material-icons {

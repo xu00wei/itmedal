@@ -1,86 +1,88 @@
-<div id="medal-item" class="content-box part-two" ng-controller="medalItemCtrl">
-    <nav>
-        <p>
-            <a href="">首页</a>&nbsp;>&nbsp;
-            <a href="">勋章</a>&nbsp;>&nbsp;
-            <a href="">AngularJS贴纸</a>
-        </p>
-    </nav>
-    <article layout="row">
-        <section flex>
-            <article class="item">
-                <header layout="row">
-                    <div flex="30">
-                        <img ng-src="{{medalList[0].cover}}" alt="">
+<div class="part-two">
+    <div id="medal-item" class="content-box" ng-controller="medalItemCtrl">
+        <nav>
+            <p>
+                <a href="">首页</a>&nbsp;>&nbsp;
+                <a href="">勋章</a>&nbsp;>&nbsp;
+                <a href="">AngularJS贴纸</a>
+            </p>
+        </nav>
+        <article layout="row">
+            <section flex>
+                <article class="item">
+                    <header layout="row">
+                        <div flex="30">
+                            <img ng-src="{{medalList[0].cover}}" alt="详情贴纸">
+                        </div>
+                        <div flex="30">
+                            <h3>AngularJS</h3>
+                            <p>$12.5/枚</p>
+                            <md-button class="go-buy">去淘宝购买</md-button>
+                        </div>
+                        <table flex border="1" frame="hsides" rules="groups">
+                            <colgroup span="1" width="120"></colgroup>
+                            <colgroup span="1" width="120"></colgroup>
+                            <tr>
+                                <th>购买数量(个)</th>
+                                <th>价格(个)</th>
+                            </tr>
+                            <tr ng-repeat="price in priceList">
+                                <td> > {{price.minNum}}</td>
+                                <td> > {{price.price}}</td>
+                            </tr>
+                        </table>
+                    </header>
+                    <div>
+                        <p>description</p>
+                        <p>快去购买吧,祝您早日攻克您的勋章</p>
                     </div>
-                    <div flex="30">
-                        <h3>AngularJS</h3>
-                        <p>$12.5/枚</p>
-                        <md-button class="go-buy">去淘宝购买</md-button>
-                    </div>
-                    <table flex border="1" frame="hsides" rules="groups">
-                        <colgroup span="1" width="120"></colgroup>
-                        <colgroup span="1" width="120"></colgroup>
-                        <tr>
-                            <th>购买数量(个)</th>
-                            <th>价格(个)</th>
-                        </tr>
-                        <tr ng-repeat="price in priceList">
-                            <td> > {{price.minNum}}</td>
-                            <td> > {{price.price}}</td>
-                        </tr>
-                    </table>
-                </header>
-                <div>
-                    <p>description</p>
-                    <p>快去购买吧,祝您早日攻克您的勋章</p>
-                </div>
 
-            </article>
-            <section class="else-like">
-                <h2>购买的人还喜欢</h2>
-                <ul layout="row" layout-wrap>
-                    <li ng-repeat="medal in medalList track by $index" class="ib-middle">
-                        <div>
+                </article>
+                <section class="else-like">
+                    <h2>购买的人还喜欢</h2>
+                    <ul layout="row" layout-wrap>
+                        <li ng-repeat="medal in medalList track by $index" class="ib-middle">
+                            <div>
+                                <img ng-src="{{medal.cover}}" alt="">
+                                <p>{{medal.describe}}{{medal.price}}</p>
+                            </div>
+                            <i class="cart-icon"></i>
+                        </li>
+                    </ul>
+                </section>
+                <section class="else-want">
+                    <h2>购买的人还想要</h2>
+                    <ul layout="row" layout-wrap>
+                        <li flex="25">
+                            <div>
+                                <img src="" alt="">
+                                <p></p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <aside flex="nogrow">
+                <section class="now-hot">
+                    <h2>最近热卖</h2>
+                    <ul>
+                        <li ng-repeat="medal in medalList track by $index" class="clearfix" ng-class="{'active': $index==0}">
                             <img ng-src="{{medal.cover}}" alt="">
-                            <p>{{medal.describe}}{{medal.price}}</p>
-                        </div>
-                        <i class="cart-icon"></i>
-                    </li>
-                </ul>
-            </section>
-            <section class="else-want">
-                <h2>购买的人还想要</h2>
-                <ul layout="row" layout-wrap>
-                    <li flex="25">
-                        <div>
-                            <img src="" alt="">
-                            <p></p>
-                        </div>
-                    </li>
-                </ul>
-            </section>
-        </section>
-        <aside flex="nogrow">
-            <section class="now-hot">
-                <h2>最近热卖</h2>
-                <ul>
-                    <li ng-repeat="medal in medalList track by $index" class="clearfix">
-                        <img ng-src="{{medal.cover}}" alt="">
-                        <p>{{medal.describe}}</p>
-                        <p>{{medal.price}}</p>
-                    </li>
-                </ul>
-            </section>
-            <section class="tag">
-                <h2>标签</h2>
-                <ul layout="row" layout-wrap>
-                    <li flex="nogrow">前端</li>
-                    <li flex="nogrow">Web</li>
-                    <li flex="nogrow">Javascript</li>
-                </ul>
-            </section>
-        </aside>
-    </article>
+                            <p>{{medal.describe}}</p>
+                            <p>{{medal.price}}</p>
+                        </li>
+                    </ul>
+                </section>
+                <section class="tag">
+                    <h2>标签</h2>
+                    <ul layout="row" layout-wrap>
+                        <li flex="nogrow" 
+                            ng-repeat="lb in labels" 
+                            ng-style="{'background': lb.color}">{{lb.name}}</li>
+                    </ul>
+                </section>
+            </aside>
+        </article>
+    </div>
 </div>
 

@@ -4,12 +4,14 @@ $activePurple:  #B2BBF5
 $hoverColor:  rgba(193,207,251,0.2)
 $search-radius: 20px
 
+#home-page.dnt
+    padding-bottom: 0px 
 #home-page
     background: $bgPurple
     padding-bottom: 20px 
 
     > .content-box > *:not(p)
-        margin-top: 10px
+        margin-top: 20px
 
     > .content-box
         padding: 10px 0 0
@@ -108,8 +110,67 @@ $search-radius: 20px
                 background: url($img_ic_apps)
                 @include background-size
 
+    .dnt-header
+        margin: 30px 0 0 20px
+
+        span
+            &:first-child
+                color: $fontColor5
+                margin: 5px
+
+            &:nth-child(2)
+                padding: 3px 10px
+                border-radius: 10px
+                background: $btnBlue
+                color: white
+
+.dnt
+    .content
+        padding: 30px 0 50px
+
+    h2
+        div
+            width: 230px
+            height: 200px
+            position: relative
+            background: $baseBlue
+            margin: 10px 0 0;
+
+            p
+                width: 100px
+                height: 70px
+                color: white
+                line-height: 35px
+
+                span
+                    font-size: 3rem
+
+    md-list
+        padding: 0
+
+    md-list-item:not("total")
+        > p > span
+            font-size: $fontSize4
+            color: $fontColor5
+
+    md-list-item:nth-last-child(2)
+        > p
+            padding: 0 0 10px
+            border-bottom: solid 1px $lineColor
 
 
+    md-list-item.total 
+        font-weight: 700
+        font-size: $fontSize2
+
+#home-page.dnt .shadow-box
+        margin: 10px 0 0
+
+
+
+
+
+            
 
 
 

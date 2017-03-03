@@ -9,17 +9,22 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,$url
     }
 
     $stateProvider
-        .state("home", {
+        .state("home", {    // 首页
             url: "/home",
             controller: "homeCtrl as home",
             templateUrl: getUrl("home.html")
         })
-        .state("medal",{
+        .state("donateInfo",{   // 捐赠信息
+            url: "/dntInfo",
+            controller: "donateInfoCtrl as dntInfo",    //def in home_ctrl.js
+            templateUrl: getUrl("dnt-info.html")
+        })
+        .state("medal",{    // 勋章列表
             url: "/medal",
             controller: "medalCtrl as medal",
             templateUrl: getUrl("medal.html")
         })
-        .state("medalItem",{
+        .state("medalItem",{    //勋章详情
             url: "/medalItem",
             templateUrl: getUrl("medal/medal-item.html")
         })
