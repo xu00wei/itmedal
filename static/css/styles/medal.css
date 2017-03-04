@@ -90,7 +90,7 @@ button {
     width: 30px;
     position: absolute;
     position: static;
-    background-image: url("../images/cart.png"); }
+    background-image: url("../images/cart_current.png"); }
 
 .basePseudoElement {
   content: " ";
@@ -140,6 +140,14 @@ button {
   -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); }
 
+.md-button:not([disabled]):hover {
+  background: rgba(193, 207, 251, 0.2); }
+
+.md-button {
+  color: #B2BBF5; }
+  .md-button p {
+    color: black; }
+
 #medal-item > nav {
   padding: 30px 0 10px; }
 
@@ -148,11 +156,18 @@ button {
   box-shadow: 0 0 10px rgba(90, 138, 255, 0.2);
   padding: 20px; }
 
+#medal-item h2 {
+  font-size: 1.6rem;
+  font-weight: 700; }
+
 #medal-item header img {
   display: block;
   position: relative;
   margin: auto;
   right: 10px; }
+
+#medal-item .cart-icon {
+  display: none; }
 
 #medal-item .item {
   padding: 10px 0; }
@@ -197,13 +212,37 @@ button {
   position: relative;
   text-align: center;
   width: 23%;
-  padding-bottom: 30px;
   margin-bottom: 30px;
-  float: none; }
+  float: none;
+  -moz-transition: all ease-in-out 300ms;
+  -webkit-transition: all ease-in-out 300ms;
+  -o-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms; }
+  #medal-item .else-like li:hover {
+    -ms-transform: translate3d(0, 0, 10px);
+    -moz-transform: translate3d(0, 0, 10px);
+    -webkit-transform: translate3d(0, 0, 10px);
+    -o-transform: translate3d(0, 0, 10px);
+    transform: translate3d(0, 0, 10px);
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); }
+    #medal-item .else-like li:hover .cart-icon {
+      display: block;
+      position: absolute; }
   #medal-item .else-like li .cart-icon {
-    bottom: -25px; }
+    bottom: -20px; }
 
-#medal-item .else-like li > div {
+#medal-item .else-like .md-button {
+  width: 100%;
+  padding-bottom: 30px; }
+
+#medal-item .else-want ul > li {
+  text-align: center; }
+  #medal-item .else-want ul > li > div {
+    display: inline-block; }
+
+#medal-item .else-want li > div {
   display: inline-block;
   vertical-align: middle;
   text-align: center; }

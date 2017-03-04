@@ -90,7 +90,7 @@ button {
     width: 30px;
     position: absolute;
     position: static;
-    background-image: url("../images/cart.png"); }
+    background-image: url("../images/cart_current.png"); }
 
 .basePseudoElement {
   content: " ";
@@ -139,6 +139,14 @@ button {
   -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); }
+
+.md-button:not([disabled]):hover {
+  background: rgba(193, 207, 251, 0.2); }
+
+.md-button {
+  color: #B2BBF5; }
+  .md-button p {
+    color: black; }
 
 #logs {
   margin-top: 2px; }

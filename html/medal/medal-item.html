@@ -41,11 +41,13 @@
                 <section class="else-like">
                     <h2>购买的人还喜欢</h2>
                     <ul layout="row" layout-wrap>
-                        <li ng-repeat="medal in medalList track by $index" class="ib-middle">
-                            <div>
-                                <img ng-src="{{medal.cover}}" alt="">
-                                <p>{{medal.describe}}{{medal.price}}</p>
-                            </div>
+                        <li ng-repeat="medal in medalList track by $index" >
+                            <md-button>
+                                <div>
+                                    <img ng-src="{{medal.cover}}" alt="">
+                                    <p>{{medal.describe}}{{medal.price}}</p>
+                                </div>
+                            </md-button>
                             <i class="cart-icon"></i>
                         </li>
                     </ul>
@@ -55,8 +57,10 @@
                     <ul layout="row" layout-wrap>
                         <li flex="25">
                             <div>
-                                <img src="" alt="">
-                                <p></p>
+                                <p class="md-name">angularJs</p>
+                                <img src="../static/images/angular.png" alt="">
+                                <p class="md-wantnum"><span></span></p>
+                                <p class="is-mywant">200人想要</p>
                             </div>
                         </li>
                     </ul>
