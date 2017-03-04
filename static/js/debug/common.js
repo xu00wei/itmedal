@@ -1,4 +1,4 @@
-var app = angular.module("ItMadelApp",['ngMaterial','directive','index_ctrl','home_ctrl','ui.router','tools']);
+var app = angular.module("ItMadelApp",['ngMaterial','directive','index_ctrl','home_ctrl','ui.router','tools','ngMdIcons']);
 app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,$urlRouterProvider){
     "ngInject";
     //$stateProvider.when("");

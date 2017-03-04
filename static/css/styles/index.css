@@ -582,12 +582,52 @@ main {
     #index-footer > div .sitemap {
       display: table;
       margin: auto; }
+    #index-footer > div .contact-us .material-icons {
+      position: relative;
+      margin-right: 10px;
+      top: 2px;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.5); }
     #index-footer > div .qr-code {
       display: inline-block;
       float: right;
       text-align: center; }
+      #index-footer > div .qr-code dd {
+        height: 100px;
+        width: 100px;
+        padding: 5px;
+        margin: 0 auto;
+        background: white;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; }
+      #index-footer > div .qr-code i {
+        height: 100%;
+        width: 100%;
+        display: block;
+        background: url("../images/qr.png") no-repeat;
+        background-size: cover; }
+    #index-footer > div ng-md-icon {
+      display: block;
+      height: 26px;
+      width: 26px;
+      float: left;
+      position: relative;
+      top: -3px;
+      cursor: pointer;
+      border-radius: 50%;
+      margin-left: 5px; }
+      #index-footer > div ng-md-icon[icon="facebook"] {
+        background: #3D5D96; }
+      #index-footer > div ng-md-icon[icon="twitter"] {
+        background: #3FADEA; }
+      #index-footer > div ng-md-icon[icon="google-plus"] {
+        background: #D05E46; }
+    #index-footer > div svg {
+      position: relative;
+      top: 5px; }
   #index-footer .copyright {
-    border-top: 1px solid #fff;
+    border-top: 1px solid #989BA2;
     padding: 20px 0;
     height: 20px;
     -moz-box-sizing: content-box;
