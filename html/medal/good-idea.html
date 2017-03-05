@@ -1,5 +1,5 @@
 <div class="part-two">
-    <div id="medal-item" class="content-box" ng-controller="medalItemCtrl">
+    <div id="medal-item" class="content-box  good-idea" ng-controller="medalItemCtrl">
         <nav>
             <p>
                 <a href="">首页</a>&nbsp;>&nbsp;
@@ -8,29 +8,20 @@
             </p>
         </nav>
         <article layout="row">
+            <md-button class="md-fab share"> 
+                <ng-md-icon class="center-all" icon="share" style="fill: #fff" size="16px"></ng-md-icon>
+            </md-button>
             <section flex>
                 <article class="item">
                     <header layout="row">
-                        <div flex="30">
+                        <div flex="25">
                             <img ng-src="{{medalList[0].cover}}" alt="详情贴纸">
                         </div>
-                        <div flex="30">
+                        <div class="header-content" flex="30">
                             <h3>AngularJS</h3>
-                            <p>$12.5/枚</p>
-                            <md-button class="go-buy">去淘宝购买</md-button>
+                            <p class="md-wantnum"><span></span></p>
+                            <p class="is-mywant">200人想要</p>
                         </div>
-                        <table flex border="1" frame="hsides" rules="groups">
-                            <colgroup span="1" width="120"></colgroup>
-                            <colgroup span="1" width="120"></colgroup>
-                            <tr>
-                                <th>购买数量(个)</th>
-                                <th>价格(个)</th>
-                            </tr>
-                            <tr ng-repeat="price in priceList">
-                                <td> > {{price.minNum}}</td>
-                                <td> > {{price.price}}</td>
-                            </tr>
-                        </table>
                     </header>
                     <div>
                         <p>description</p>
@@ -38,6 +29,19 @@
                     </div>
 
                 </article>
+                <section class="else-want">
+                    <h2>购买的人还想要</h2>
+                    <ul layout="row" layout-wrap>
+                        <li flex="25">
+                            <div>
+                                <img src="../static/images/angular.png" alt="">
+                                <p class="md-name">angularJs</p>
+                                <p class="md-wantnum"><span></span></p>
+                                <p class="is-mywant">200人想要</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
                 <section class="else-like">
                     <h2>购买的人还喜欢</h2>
                     <ul layout="row" layout-wrap>
@@ -52,19 +56,7 @@
                         </li>
                     </ul>
                 </section>
-                <section class="else-want">
-                    <h2>购买的人还想要</h2>
-                    <ul layout="row" layout-wrap>
-                        <li flex="25">
-                            <div>
-                                <p class="md-name">angularJs</p>
-                                <img src="../static/images/angular.png" alt="">
-                                <p class="md-wantnum"><span></span></p>
-                                <p class="is-mywant">200人想要</p>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
+
             </section>
             <aside flex="nogrow">
                 <section class="now-hot">
@@ -89,4 +81,3 @@
         </article>
     </div>
 </div>
-
