@@ -52,6 +52,9 @@ sv.service("Medal", ["$timeout", "Tools", function($timeout, Tools){
     // 页面切换时需更新
     this.init = function(){
         elements = document.querySelectorAll(".slider ul > .item");
+        if(elements.length > 2){
+            elements = [elements[0],elements[1]];
+        }
         points = document.querySelectorAll(".points > li");
     }
 

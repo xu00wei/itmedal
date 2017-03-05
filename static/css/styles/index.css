@@ -97,6 +97,21 @@ button {
   display: block;
   position: absolute; }
 
+.hover-shadow {
+  -moz-transition: all ease-in-out 300ms;
+  -webkit-transition: all ease-in-out 300ms;
+  -o-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms; }
+  .hover-shadow:hover {
+    -ms-transform: translate3d(0, 0, 10px);
+    -moz-transform: translate3d(0, 0, 10px);
+    -webkit-transform: translate3d(0, 0, 10px);
+    -o-transform: translate3d(0, 0, 10px);
+    transform: translate3d(0, 0, 10px);
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); }
+
 .title {
   font-size: 1.6rem;
   line-height: 2.6rem; }
@@ -122,7 +137,7 @@ button {
   background: #F3F3F3; }
   .md-wantnum span {
     width: 60%;
-    height: 10px;
+    height: 100%;
     display: block;
     border-radius: 5px;
     background: -prefix-linear-gradient(left, #13c4f0, #46f2cf);
@@ -531,21 +546,31 @@ main {
         line-height: 40px;
         float: right;
         cursor: pointer; }
-    main .want-medals .medals li {
+    main .want-medals ._md-list-item-inner {
       text-align: center; }
-    main .want-medals .medals div {
-      display: inline-block; }
-    main .want-medals .medals .is-mywant::after {
-      content: " ";
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: inline-block;
-      position: relative;
-      bottom: -6px;
-      left: 3px;
-      background: url(../images/iwant.png);
-      background-size: auto 30px; }
+    main .want-medals .md-wantnum {
+      width: 150px;
+      margin: 0 auto; }
+      main .want-medals .md-wantnum span {
+        margin: 0; }
+    main .want-medals .medals {
+      margin: 0 -15px; }
+      main .want-medals .medals li {
+        text-align: center;
+        padding: 0 15px; }
+      main .want-medals .medals div {
+        display: inline-block; }
+  main .is-mywant::after {
+    content: " ";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    bottom: -6px;
+    left: 3px;
+    background: url(../images/iwant.png);
+    background-size: auto 30px; }
   main .part-three {
     height: 200px;
     background: -prefix-linear-gradient(left, #13c4f0, #46f2cf);
@@ -607,25 +632,21 @@ main {
         display: block;
         background: url("../images/qr.png") no-repeat;
         background-size: cover; }
+    #index-footer > div .md-button {
+      min-width: initial;
+      width: 26px;
+      height: 26px;
+      padding: 0;
+      margin-left: 5px; }
+      #index-footer > div .md-button:first-child {
+        background: #3D5D96; }
+      #index-footer > div .md-button:nth-child(2) {
+        background: #3FADEA; }
+      #index-footer > div .md-button:last-child {
+        background: #D05E46; }
     #index-footer > div ng-md-icon {
       display: block;
-      height: 26px;
-      width: 26px;
-      float: left;
-      position: relative;
-      top: -3px;
-      cursor: pointer;
-      border-radius: 50%;
-      margin-left: 5px; }
-      #index-footer > div ng-md-icon[icon="facebook"] {
-        background: #3D5D96; }
-      #index-footer > div ng-md-icon[icon="twitter"] {
-        background: #3FADEA; }
-      #index-footer > div ng-md-icon[icon="google-plus"] {
-        background: #D05E46; }
-    #index-footer > div svg {
-      position: relative;
-      top: 5px; }
+      position: relative; }
   #index-footer .copyright {
     border-top: 1px solid #989BA2;
     padding: 20px 0;

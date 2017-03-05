@@ -26,11 +26,13 @@ app.config(function($stateProvider,$urlRouterProvider){
         })
         .state("medalItem",{    //勋章详情
             url: "/medalItem",
-            templateUrl: getUrl("medal/medal-item.html")
+            controller: "medalCtrl as medal",
+            templateUrl: getUrl("medal.html")  //medal path to item
         })
         .state("goodIdea",{
             url: "/goodIdea",
-            templateUrl: getUrl("good-idea.html")
+            controller: "medalCtrl as medal",
+            templateUrl: getUrl("medal.html") //medal path to goodIdea
         })
         .state("log",{
             url: "/log",

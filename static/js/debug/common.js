@@ -26,11 +26,13 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,$url
         })
         .state("medalItem",{    //勋章详情
             url: "/medalItem",
-            templateUrl: getUrl("medal/medal-item.html")
+            controller: "medalCtrl as medal",
+            templateUrl: getUrl("medal.html")  //medal path to item
         })
         .state("goodIdea",{
             url: "/goodIdea",
-            templateUrl: getUrl("good-idea.html")
+            controller: "medalCtrl as medal",
+            templateUrl: getUrl("medal.html") //medal path to goodIdea
         })
         .state("log",{
             url: "/log",
@@ -102,6 +104,7 @@ angular.module("path",[])
         switch(path){
             case "medal":       return "./html/medal/medal-list.html";
             case "medalItem":   return "./html/medal/medal-item.html";
+            case "goodIdea": return "./html/medal/good-idea.html";
             case "log":         return "./html/log/log-list.html";
             case "logItem":     return "./html/log/log-item.html";
             default: return false;

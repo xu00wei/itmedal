@@ -401,7 +401,9 @@ main
                         line-height: 25px
                         color: #fff
                         content: "$"
+
     $want-height: 40px
+
     .want-medals
         padding: 60px 0
         & > div
@@ -410,27 +412,42 @@ main
             h2
                 line-height: $want-height
                 float: left
+
             div
                 line-height: $want-height
                 float: right
                 cursor: pointer
+
+        ._md-list-item-inner
+            text-align: center
+
+            
+        .md-wantnum
+            width: $progressWidth
+            margin: 0 auto
+
+            span
+                margin: 0
         .medals
+            margin: 0 -15px
+
             li
                 text-align: center
+                padding: 0 15px
             div
                 display: inline-block
 
-            .is-mywant::after
-                content: " "
-                width: 30px
-                height: 30px
-                border-radius: 50%
-                display: inline-block
-                position: relative
-                bottom: -6px
-                left: 3px
-                background: url(../images/iwant.png)
-                background-size: auto 30px
+    .is-mywant::after
+        content: " "
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        display: inline-block
+        position: relative
+        bottom: -6px
+        left: 3px
+        background: url(../images/iwant.png)
+        background-size: auto 30px
 
 
     .part-three
@@ -505,29 +522,26 @@ main
                 background: url($img_qr) no-repeat
                 background-size: cover
 
-        ng-md-icon
-            display: block
-            height: 26px
+        .md-button
+            min-width: initial
             width: 26px
-            float: left
-            position: relative
-            top: -3px
-            cursor: pointer
-            border-radius: 50%
+            height: 26px
+            padding: 0
             margin-left: 5px
-        
-            &[icon="facebook"]
+
+            &:first-child
                 background: $iconFacebook
 
-            &[icon="twitter"]
+            &:nth-child(2)
                 background: $iconTwitter
 
-            &[icon="google-plus"]
+            &:last-child
                 background: $iconGx
 
-        svg
+        ng-md-icon
+            display: block
             position: relative
-            top: 5px
+
         
 
     .copyright
