@@ -1,0 +1,37 @@
+@import "common"
+.user-info
+    padding-bottom: 30px
+
+    md-content
+        background: none
+        overflow: visible
+
+        > *
+            background: #fff
+            @include box-shadow(0 0 5px $shadowBlue)
+
+        aside
+            height: 164px
+
+    .top-nav
+        padding: 30px 0 10px
+
+
+    .left-nav
+        svg
+            position: relative
+            margin-right: 5px
+            top: 3px
+
+        md-list-item
+            &.active
+                background: $hoverColor
+
+    .content
+        md-list-item
+            margin-bottom: 20px
+
+        .date
+            color:  $fontColor5
+
+

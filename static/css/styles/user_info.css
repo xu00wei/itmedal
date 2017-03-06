@@ -163,24 +163,27 @@ button {
   .md-button p {
     color: black; }
 
-#logs {
-  margin-top: 2px; }
-  #logs nav {
-    margin: 15px 0; }
-  #logs .text {
-    text-indent: 0.5cm; }
-  #logs > ul {
-    display: table;
-    margin: 0 auto; }
-  #logs .content-box {
-    padding: 1px; }
-  #logs .pagination {
-    width: 5px;
-    height: 5px;
-    margin: 0 10px 0 0;
-    border-radius: 50%;
-    background: black;
-    float: left; }
-    #logs .pagination:active {
-      width: 10px;
-      height: 10px; }
+.user-info {
+  padding-bottom: 30px; }
+  .user-info md-content {
+    background: none;
+    overflow: visible; }
+    .user-info md-content > * {
+      background: #fff;
+      -webkit-box-shadow: 0 0 5px rgba(90, 138, 255, 0.2);
+      -moz-box-shadow: 0 0 5px rgba(90, 138, 255, 0.2);
+      box-shadow: 0 0 5px rgba(90, 138, 255, 0.2); }
+    .user-info md-content aside {
+      height: 164px; }
+  .user-info .top-nav {
+    padding: 30px 0 10px; }
+  .user-info .left-nav svg {
+    position: relative;
+    margin-right: 5px;
+    top: 3px; }
+  .user-info .left-nav md-list-item.active {
+    background: rgba(193, 207, 251, 0.2); }
+  .user-info .content md-list-item {
+    margin-bottom: 20px; }
+  .user-info .content .date {
+    color: #989BA2; }

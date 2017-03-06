@@ -316,6 +316,11 @@ button {
     height: 25px;
     background: #000;
     position: relative; }
+  .good-idea .else-want md-list {
+    padding: 0;
+    margin-top: 20px; }
+  .good-idea .else-want ._md-list-item-inner {
+    pointer-events: none; }
   .good-idea .md-button.md-fab:not([disabled]):hover {
     background: #000; }
   .good-idea svg {

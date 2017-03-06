@@ -37,6 +37,14 @@ tools.service("Tools",function(){
         return [log,log,log,log];
     }
 
+    this.genMessages = function(){
+        var item = {
+            "date": "2016 July 30",
+            "text": "欢迎您开启邮箱订阅功能,您将收到我们发送给你的商品上架提示信息"
+        }
+        return [item,item,item,item,item,item,item];
+    }
+
     this.genDonateList = function(){
         var python = {
             "name": "PYTHON",

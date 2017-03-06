@@ -179,6 +179,14 @@ tools.service("Tools",function(){
         return [log,log,log,log];
     }
 
+    this.genMessages = function(){
+        var item = {
+            "date": "2016 July 30",
+            "text": "欢迎您开启邮箱订阅功能,您将收到我们发送给你的商品上架提示信息"
+        }
+        return [item,item,item,item,item,item,item];
+    }
+
     this.genDonateList = function(){
         var python = {
             "name": "PYTHON",
@@ -196,3 +204,41 @@ tools.service("Tools",function(){
     this.genLabels = ["前端","Web","Javascript"];
 
 })
+
+angular.module("userInfo_sv",['tools'])
+.service("UserInfo",["Tools", function(Tools){
+    var accountInfos;
+    var voteHistorys;
+    var messages;
+
+    this.getPageContent = function(index){
+        switch(Number(index)){
+            case 0: 
+                return accountInfos != null ? accountInfos : setAccountInfos();
+
+            case 1:
+                return voteHistorys != null ? voteHistorys : setVoteHistorys();
+
+            case 2:
+                return messages != null ? messages : setMessages();
+
+        }
+    }
+
+
+    function setMessages(){
+        messages = Tools.genMessages();
+        return messages;
+    }
+
+    function  setAccountInfos(){
+        accountInfos = null;
+        return accountInfos;
+    }
+
+    function setVoteHistorys(){
+        voteHistorys = null;
+        return voteHistorys;
+    }
+
+}])

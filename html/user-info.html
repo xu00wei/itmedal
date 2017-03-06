@@ -1,0 +1,41 @@
+<div class="part-two   user-info">
+    <div class="content-box" ng-controller="medalItemCtrl">
+        <nav class="top-nav">
+            <p>
+                <a href="">首页</a>&nbsp;>&nbsp;
+                <a href="">用户信息</a>&nbsp;>&nbsp;
+                <a href="">帐户信息</a>
+            </p>
+        </nav>
+        <md-content layout="row" layout-wrap>
+            <aside flex="20" class="left-nav">
+                <nav>
+                    <md-list>
+                        <md-list-item ng-click="setPage(0)" ng-class="{'active':pageIndex==0}">
+                            <ng-md-icon icon="perm_identity" style="fill: #000"></ng-md-icon>
+                            <p>账户信息</p>
+                        </md-list-item>
+
+                        <md-list-item ng-click="setPage(1)" ng-class="{'active':pageIndex==1}">
+                            <ng-md-icon icon="timelapse" style="fill: #000"></ng-md-icon>
+                            <p>投票历史</p>
+                        </md-list-item>
+
+                        <md-list-item ng-click="setPage(2)" ng-class="{'active':pageIndex==2}">
+                            <ng-md-icon icon="comment" style="fill: #000"></ng-md-icon>
+                            <p>信息提示</p>
+                        </md-list-item>
+                    </md-list>
+                </nav>
+            </aside>
+            <md-list flex="75" flex-offset="5" class="content">
+                <md-list-item ng-repeat="info in pageContent track by $index">
+                    <div class="md-list-item-text">
+                        <p class="date">{{info.date}}</p>
+                        <p class="text">{{info.text}}</p>
+                    </div>   
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </div>
+</div>

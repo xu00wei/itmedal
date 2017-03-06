@@ -110,3 +110,12 @@ medal.controller("medalListCtrl",["$scope", "Tools", function($scope,Tools){
 }]);
 
 
+
+angular.module("userInfo",['userInfo_sv'])
+.controller("userInfoCtrl", ["$scope", "UserInfo", function($scope,UserInfo){
+    "ngInject";
+    $scope.setPage = function(index){
+        $scope.pageIndex = index;
+        $scope.pageContent = UserInfo.getPageContent(index);
+    }
+}])

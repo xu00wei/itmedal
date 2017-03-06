@@ -1,4 +1,4 @@
-var app = angular.module("ItMadelApp",['ngMaterial','directive','index_ctrl','home_ctrl','ui.router','tools','ngMdIcons']);
+var app = angular.module("ItMadelApp",['ngMaterial','directive','index_ctrl','home_ctrl','ui.router','tools','ngMdIcons','userInfo']);
 app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,$urlRouterProvider){
     "ngInject";
     //$stateProvider.when("");
@@ -34,8 +34,14 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,$url
             controller: "medalCtrl as medal",
             templateUrl: getUrl("medal.html") //medal path to goodIdea
         })
+        .state("userInfo",{
+            url: "/userInfo",
+            controller: "userInfoCtrl",
+            templateUrl: getUrl("user-info.html")
+        })
         .state("log",{
             url: "/log",
+            controller: "logCtrl as lc",
             templateUrl: getUrl("log.html")
         })
         .state("logItem",{

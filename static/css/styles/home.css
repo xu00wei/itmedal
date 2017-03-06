@@ -296,3 +296,6 @@ button {
 
 #home-page.dnt .shadow-box {
   margin: 10px 0 0; }
+
+.md-button ._md-list-item-inner {
+  pointer-events: none; }
