@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   background: #fff;
   font-size: 62.5%; }
@@ -477,6 +478,7 @@ main {
         color: black; }
       main .shopping .goods .md-button + i.cart-icon {
         display: none; }
+      main .shopping .goods .md-button + i.cart-icon:hover,
       main .shopping .goods .md-button:hover + i.cart-icon {
         display: block; }
       main .shopping .goods .new::before {
@@ -515,26 +517,30 @@ main {
         main .shopping .goods .img img {
           display: block;
           margin: auto; }
+        main .shopping .goods .img .desc {
+          position: relative;
+          top: -10px; }
         main .shopping .goods .img .price {
           display: inline-block;
           position: relative;
-          top: -35px;
-          left: 70px; }
+          top: -25px;
+          left: 90px; }
           main .shopping .goods .img .price::before, main .shopping .goods .img .price::after {
             content: " ";
             display: block;
-            height: 25px;
-            width: 25px;
+            height: 35px;
+            width: 35px;
             position: absolute;
-            left: -28px;
+            left: -37px;
             top: -5px;
             border-radius: 50%; }
           main .shopping .goods .img .price::before {
             background: #1acab0; }
           main .shopping .goods .img .price::after {
-            line-height: 25px;
+            line-height: 35px;
             color: #fff;
-            content: "$"; }
+            font-size: 1.8rem;
+            content: "¥"; }
   main .want-medals {
     padding: 60px 0; }
     main .want-medals > div {

@@ -144,12 +144,27 @@ var tools = angular.module("tools",[]);
 tools.service("Tools",function(){
 
     this.genMedalItemList = function(){
-        var testData = {
-            "cover": "../static/images/angular.png",
+        return [{
+            "cover": "../static/images/chakra.png",
             "price": "7.5",
-            "describe": "angular贴纸"
-        }
-        return [testData,testData,testData,testData,testData];
+            "describe": "chakra贴纸"
+        },{
+            "cover": "../static/images/python.png",
+            "price": "11.2",
+            "describe": "python贴纸"
+        },{
+            "cover": "../static/images/C++.png",
+            "price": "8.8",
+            "describe": "C++贴纸"
+        },{
+            "cover": "../static/images/debian.png",
+            "price": "9.9",
+            "describe": "debian贴纸"
+        },{
+            "cover": "../static/images/arch.png",
+            "price": "100",
+            "describe": "arch贴纸"
+        }];
     }
 
     this.genItemPrice = function(){

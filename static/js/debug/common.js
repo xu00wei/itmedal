@@ -5,7 +5,7 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,$url
     $urlRouterProvider.when("","home");
     $urlRouterProvider.when("/","home");
     var getUrl = function(urlName){
-        return "http://localhost:5000/html/"+urlName;
+        return "/html/"+urlName;
     }
 
     $stateProvider

@@ -353,7 +353,8 @@ main
 
             .md-button + i.cart-icon
                 display: none
-
+            
+            .md-button + i.cart-icon:hover,
             .md-button:hover + i.cart-icon
                 display: block
                 
@@ -383,24 +384,29 @@ main
                     display: block
                     margin: auto
 
+                .desc
+                    position: relative
+                    top: -10px
+
                 .price
                     display: inline-block
                     position: relative
-                    top: -35px
-                    left: 70px
+                    top: -25px
+                    left: 90px
 
                     &::before,
                     &::after
-                        @include new-block($width:25px,$height:25px)
-                        left: -28px
+                        @include new-block($width:35px,$height:35px)
+                        left: -37px
                         top: -5px
                         border-radius: 50%
                     &::before
                         background: #1acab0
                     &::after
-                        line-height: 25px
+                        line-height: 35px
                         color: #fff
-                        content: "$"
+                        font-size: $fontSize2
+                        content: "¥"
 
     $want-height: 40px
 
