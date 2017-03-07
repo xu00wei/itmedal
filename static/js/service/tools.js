@@ -5,23 +5,23 @@ tools.service("Tools",function(){
         return [{
             "cover": "../static/images/chakra.png",
             "price": "7.5",
-            "describe": "chakra贴纸"
+            "name": "chakra贴纸"
         },{
             "cover": "../static/images/python.png",
             "price": "11.2",
-            "describe": "python贴纸"
+            "name": "python贴纸"
         },{
             "cover": "../static/images/C++.png",
             "price": "8.8",
-            "describe": "C++贴纸"
+            "name": "C++贴纸"
         },{
             "cover": "../static/images/debian.png",
             "price": "9.9",
-            "describe": "debian贴纸"
+            "name": "debian贴纸"
         },{
             "cover": "../static/images/arch.png",
             "price": "100",
-            "describe": "arch贴纸"
+            "name": "arch贴纸"
         }];
     }
 
@@ -37,7 +37,7 @@ tools.service("Tools",function(){
         var wl = {
             "cover": "../static/images/angular.png",
             "wantNum": "200",
-            "describe": "angular贴纸", 
+            "name": "angular贴纸", 
         }
         return [wl, wl, wl];
     }

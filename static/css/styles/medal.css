@@ -227,6 +227,10 @@ button {
 #medal-item.good-idea header .header-content .is-mywant::after {
   bottom: -10px; }
 
+#medal-item .else-like img,
+#medal-item .else-want img {
+  height: 97px; }
+
 #medal-item .else-like ul {
   text-align: justify; }
 
