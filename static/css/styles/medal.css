@@ -239,12 +239,19 @@ button {
   position: relative;
   text-align: center;
   width: 23%;
+  height: 180px;
   margin-bottom: 30px;
   float: none;
   -moz-transition: all ease-in-out 300ms;
   -webkit-transition: all ease-in-out 300ms;
   -o-transition: all ease-in-out 300ms;
   transition: all ease-in-out 300ms; }
+  #medal-item .else-like li .md-button {
+    padding-top: 10px;
+    height: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
   #medal-item .else-like li:hover {
     -ms-transform: translate3d(0, 0, 10px);
     -moz-transform: translate3d(0, 0, 10px);

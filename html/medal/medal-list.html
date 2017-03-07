@@ -36,7 +36,7 @@
         <div layout="row" layout-wrap class="goods">
             <div flex="25" ng-repeat="medal in medalList track by $index">
                 <md-button> 
-                <a class="new" ng-click="medalCtrl.setHtmlTemp(1)">
+                <a class="new" ng-click="medalCtrl.setHtmlTemp(medal)">
                     <div class="img center-all">
                         <img ng-src="{{medal.cover}}" alt="">
                         <p class="price">{{medal.price}}</p>

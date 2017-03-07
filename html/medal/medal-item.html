@@ -4,7 +4,7 @@
             <p>
                 <a href="">首页</a>&nbsp;>&nbsp;
                 <a href="">勋章</a>&nbsp;>&nbsp;
-                <a href="">AngularJS贴纸</a>
+                <a href="">{{activeMedal.name}}</a>
             </p>
         </nav>
         <article layout="row">
@@ -12,11 +12,11 @@
                 <article class="item">
                     <header layout="row">
                         <div flex="30">
-                            <img ng-src="{{medalList[0].cover}}" alt="详情贴纸">
+                            <img ng-src="{{activeMedal.cover}}" alt="详情贴纸">
                         </div>
                         <div flex="30">
-                            <h3>AngularJS</h3>
-                            <p>$12.5/枚</p>
+                            <h3>{{activeMedal.name}}</h3>
+                            <p>${{activeMedal.price}}/枚</p>
                             <md-button class="go-buy">去淘宝购买</md-button>
                         </div>
                         <table flex border="1" frame="hsides" rules="groups">
@@ -41,8 +41,8 @@
                 <section class="else-like">
                     <h2>购买的人还喜欢</h2>
                     <ul layout="row" layout-wrap>
-                        <li ng-repeat="medal in medalList track by $index" >
-                            <md-button>
+                        <li ng-repeat="medal in medalList | filter: medalFilter" >
+                            <md-button ui-sref="medalItem({mid: medal.mid})">
                                 <div>
                                     <img ng-src="{{medal.cover}}" alt="">
                                     <p>{{medal.name}}{{medal.price}}</p>
@@ -70,7 +70,7 @@
                 <section class="now-hot">
                     <h2>最近热卖</h2>
                     <ul>
-                        <li ng-repeat="medal in medalList track by $index" class="clearfix" ng-class="{'active': $index==0}">
+                        <li ng-repeat="medal in medalList" class="clearfix" ng-class="{'active': $index==0}">
                             <img ng-src="{{medal.cover}}" alt="">
                             <p>{{medal.describe}}</p>
                             <p>¥{{medal.price}}</p>

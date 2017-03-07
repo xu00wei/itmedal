@@ -25,7 +25,7 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,$url
             templateUrl: getUrl("medal.html")
         })
         .state("medalItem",{    //勋章详情
-            url: "/medalItem",
+            url: "/medalItem?mid",
             controller: "medalCtrl as medal",
             templateUrl: getUrl("medal.html")  //medal path to item
         })

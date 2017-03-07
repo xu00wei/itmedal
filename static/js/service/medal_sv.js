@@ -14,6 +14,11 @@ sv.service("Medal", function($timeout, Tools){
         points = document.querySelectorAll(".points > li");
     }
 
+    this.getMedalItem = function(mid){
+
+        return medalItem;
+    }
+
     this.getLabels = function(){
         var labels = Tools.genLabels;
         var lbs = [];
@@ -95,4 +100,4 @@ sv.service("Medal", function($timeout, Tools){
 
 
 
-});
+})

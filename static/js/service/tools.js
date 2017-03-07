@@ -1,28 +1,42 @@
 var tools = angular.module("tools",[]);
 tools.service("Tools",function(){
-
-    this.genMedalItemList = function(){
-        return [{
+    var medalList = [{
+            "mid": 1,
             "cover": "../static/images/chakra.png",
             "price": "7.5",
             "name": "chakra贴纸"
         },{
+            "mid": 2,
             "cover": "../static/images/python.png",
             "price": "11.2",
             "name": "python贴纸"
         },{
+            "mid": 3,
             "cover": "../static/images/C++.png",
             "price": "8.8",
             "name": "C++贴纸"
         },{
+            "mid": 4,
             "cover": "../static/images/debian.png",
             "price": "9.9",
             "name": "debian贴纸"
         },{
+            "mid": 5,
             "cover": "../static/images/arch.png",
             "price": "100",
             "name": "arch贴纸"
         }];
+
+    this.genMedalItemList = function(){
+        return medalList;
+    }
+
+    this.getMedalItem = function(mid){
+        for( i in medalList){
+            var medal = medalList[i];
+            if(medal.mid == Number(mid)) return medal;
+        }
+        return false;
     }
 
     this.genItemPrice = function(){

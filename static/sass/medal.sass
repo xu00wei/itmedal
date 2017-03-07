@@ -89,9 +89,15 @@ $activeBlue: #03A9F3
             position: relative
             text-align: center
             width: 23%
+            height: 180px
             margin-bottom: 30px
             float: none
             @include transition(all ease-in-out 300ms)
+
+            .md-button
+                padding-top: 10px
+                height: 100%
+                @include box-sizing(border-box)
 
             &:hover 
                 @include transform(translate3d(0,0,10px))
