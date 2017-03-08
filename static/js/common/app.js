@@ -11,8 +11,8 @@ app.config(function($stateProvider,$urlRouterProvider){
     $stateProvider
         .state("home", {    // 首页
             url: "/home",
-            controller: "homeCtrl as home",
-            templateUrl: getUrl("home.html")
+            controller: "medalCtrl as medal",
+            templateUrl: getUrl("medal.html")
         })
         .state("donateInfo",{   // 捐赠信息
             url: "/dntInfo",
@@ -21,8 +21,8 @@ app.config(function($stateProvider,$urlRouterProvider){
         })
         .state("medal",{    // 勋章列表
             url: "/medal",
-            controller: "medalCtrl as medal",
-            templateUrl: getUrl("medal.html")
+            controller: "homeCtrl as home",
+            templateUrl: getUrl("home.html")           
         })
         .state("medalItem",{    //勋章详情
             url: "/medalItem?mid",

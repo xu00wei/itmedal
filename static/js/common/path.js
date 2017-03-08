@@ -10,7 +10,7 @@ angular.module("path",[])
 
     this.getHtmlTemp = function(){
         switch(path){
-            case "medal":       return "./html/medal/medal-list.html";
+            case "home":       return "./html/medal/medal-list.html";
             case "medalItem":   return "./html/medal/medal-item.html";
             case "goodIdea": return "./html/medal/good-idea.html";
             case "log":         return "./html/log/log-list.html";

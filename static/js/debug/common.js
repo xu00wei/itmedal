@@ -11,8 +11,8 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,$url
     $stateProvider
         .state("home", {    // 首页
             url: "/home",
-            controller: "homeCtrl as home",
-            templateUrl: getUrl("home.html")
+            controller: "medalCtrl as medal",
+            templateUrl: getUrl("medal.html")
         })
         .state("donateInfo",{   // 捐赠信息
             url: "/dntInfo",
@@ -21,8 +21,8 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider,$url
         })
         .state("medal",{    // 勋章列表
             url: "/medal",
-            controller: "medalCtrl as medal",
-            templateUrl: getUrl("medal.html")
+            controller: "homeCtrl as home",
+            templateUrl: getUrl("home.html")           
         })
         .state("medalItem",{    //勋章详情
             url: "/medalItem?mid",
@@ -108,7 +108,7 @@ angular.module("path",[])
 
     this.getHtmlTemp = function(){
         switch(path){
-            case "medal":       return "./html/medal/medal-list.html";
+            case "home":       return "./html/medal/medal-list.html";
             case "medalItem":   return "./html/medal/medal-item.html";
             case "goodIdea": return "./html/medal/good-idea.html";
             case "log":         return "./html/log/log-list.html";

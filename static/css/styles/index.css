@@ -195,7 +195,7 @@ button {
       float: left;
       height: 100%;
       line-height: 70px;
-      padding: 0 10px;
+      padding: 0 15px;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       box-sizing: border-box; }
@@ -578,23 +578,49 @@ main {
     background: url(../images/iwant.png);
     background-size: auto 30px; }
   main .part-three {
-    height: 200px;
+    height: 250px;
     background: -prefix-linear-gradient(left, #13c4f0, #46f2cf);
     background: linear-gradient(to right, #13c4f0, #46f2cf); }
     main .part-three .focusme > div {
-      width: 33.33%;
+      width: 450px;
       color: #fff;
       margin: 0 auto;
-      line-height: 200px; }
+      line-height: 250px; }
     main .part-three .focusme p {
       float: left;
       font-size: 2.4rem; }
     main .part-three .focusme input {
+      color: #fff;
       border: solid 2px #fff;
       border-radius: 20px;
+      width: 215px;
       padding: 7px 25px;
-      margin: 0 0 0 40px;
+      margin: 0 23px 0 40px;
       background: transparent; }
+      main .part-three .focusme input::-webkit-input-placeholder {
+        color: #fff; }
+      main .part-three .focusme input:-moz-placeholder {
+        color: #fff; }
+      main .part-three .focusme input::-moz-placeholder {
+        color: #fff; }
+      main .part-three .focusme input:-ms-input-placeholder {
+        color: #fff; }
+    main .part-three .focusme .md-button.md-icon-button {
+      height: initial;
+      width: initial;
+      color: #000;
+      -moz-box-sizing: content-box;
+      -webkit-box-sizing: content-box;
+      box-sizing: content-box;
+      position: relative;
+      top: 10px; }
+      main .part-three .focusme .md-button.md-icon-button ng-md-icon {
+        display: block;
+        height: 36px;
+        width: 36px; }
+    main .part-three .focusme svg {
+      border: solid 2px #fff;
+      border-radius: 50%; }
 
 #index-footer {
   height: 250px;
